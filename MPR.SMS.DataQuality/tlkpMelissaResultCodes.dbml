@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Database Name="SMSBaseV5" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings"
+              ConnectionString="Data Source=sql_isdev01;Initial Catalog=SMSBaseV5;Integrated Security=True"
+              SettingsObjectName="MPR.SMS.DataQuality.My.MySettings" SettingsPropertyName="SMSBaseV5ConnectionString"
+              Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tlkpMelissaResultCode" Member="tlkpMelissaResultCodes">
+    <Type Name="tlkpMelissaResultCode">
+      <Column Name="ResultCodeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true"
+              IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ResultCode" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ResultCodeTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="isClean" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

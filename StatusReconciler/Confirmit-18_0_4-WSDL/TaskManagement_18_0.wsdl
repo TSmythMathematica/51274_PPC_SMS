@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:element name="SurveyDataExport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataExportParams" type="tns:DataExportParameters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataExportParameters">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SchedulingTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Language" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EncryptFile" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DatabaseType" type="tns:DatabaseType" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileTransferType" type="tns:FileTransferType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseFilter" type="tns:ArrayOfResponseFilter" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomDelimiter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileType" type="tns:FileType" />
+          <s:element minOccurs="1" maxOccurs="1" name="Locale" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuotedValues" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpenEndsWidth" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TextFileFormat" type="tns:TextFileFormat" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailingOptions" type="tns:EmailingOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="TemplateId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoopHandling" type="tns:LoopHandling" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoopPosition" type="tns:LoopPosition" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnableAnswerLabelsForMulties" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TextInQuestionLabels" type="tns:TextInQuestionLabels" />
+          <s:element minOccurs="1" maxOccurs="1" name="TextInAnswerElementLables" type="tns:TextInAnswerElementLables" />
+          <s:element minOccurs="1" maxOccurs="1" name="DecimalDelimiter" type="tns:DecimalDelimiter" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExcludeHierarchyAndTableLookupLabels" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DatabaseType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Production" />
+          <s:enumeration value="Test" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="FileTransferType">
+        <s:restriction base="s:string">
+          <s:enumeration value="FtpServer" />
+          <s:enumeration value="Email" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfResponseFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponseFilter" type="tns:ResponseFilter" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResponseFilter">
+        <s:restriction base="s:string">
+          <s:enumeration value="Complete" />
+          <s:enumeration value="Incomplete" />
+          <s:enumeration value="Screened" />
+          <s:enumeration value="QuotaFull" />
+          <s:enumeration value="Error" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="FileType">
+        <s:restriction base="s:string">
+          <s:enumeration value="DelimitedTextFileWithLabels" />
+          <s:enumeration value="DelimitedTextFile" />
+          <s:enumeration value="Excel" />
+          <s:enumeration value="ExcelWithLabels" />
+          <s:enumeration value="SPSSspsdat" />
+          <s:enumeration value="SPSSsav" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TextFileFormat">
+        <s:restriction base="s:string">
+          <s:enumeration value="TabSeparated" />
+          <s:enumeration value="CommaSeparated" />
+          <s:enumeration value="Custom" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="EmailingOptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HtmlBody" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlainTextBody" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReplyTo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Recipient" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodePage" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LoopHandling">
+        <s:restriction base="s:string">
+          <s:enumeration value="SeparateFiles" />
+          <s:enumeration value="SingleFile" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="LoopPosition">
+        <s:restriction base="s:string">
+          <s:enumeration value="AsQuestionnaire" />
+          <s:enumeration value="PerLevel" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TextInQuestionLabels">
+        <s:restriction base="s:string">
+          <s:enumeration value="TitleOnly" />
+          <s:enumeration value="TextOnly" />
+          <s:enumeration value="TitleAndText" />
+          <s:enumeration value="QuestionId" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TextInAnswerElementLables">
+        <s:restriction base="s:string">
+          <s:enumeration value="AnswerQuestionLabel" />
+          <s:enumeration value="Answer" />
+          <s:enumeration value="QuestionLabelAnswer" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DecimalDelimiter">
+        <s:restriction base="s:string">
+          <s:enumeration value="Point" />
+          <s:enumeration value="Comma" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SurveyDataExportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SurveyDataExportResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SurveyDataExportDefault">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SurveyDataExportDefaultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SurveyDataExportDefaultResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRecurrencePattern">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recurrencePattern" type="tns:TaskRecurrencePattern" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TaskRecurrencePattern">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RecurrenceMode" type="tns:RecurrenceMode" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Interval" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeeklyDaySchedule" type="tns:ArrayOfDayOfWeek" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonthlyDaySchedule" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="RecurrenceMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Hourly" />
+          <s:enumeration value="Daily" />
+          <s:enumeration value="Weekly" />
+          <s:enumeration value="Monthly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfDayOfWeek">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DayOfWeek" type="tns:DayOfWeek" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DayOfWeek">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sunday" />
+          <s:enumeration value="Monday" />
+          <s:enumeration value="Tuesday" />
+          <s:enumeration value="Wednesday" />
+          <s:enumeration value="Thursday" />
+          <s:enumeration value="Friday" />
+          <s:enumeration value="Saturday" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetRecurrencePatternResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskLogEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskLogEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskLogEntriesResult" type="tns:ArrayOfTaskLogEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTaskLogEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TaskLogEntry" nillable="true" type="tns:TaskLogEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaskLogEntry">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LogType" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogTypeImage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Timestamp" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaskStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTaskStatusResult" type="tns:TaskStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TaskStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Queue" />
+          <s:enumeration value="Executing" />
+          <s:enumeration value="Aborted" />
+          <s:enumeration value="Error" />
+          <s:enumeration value="Complete" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetTaskPercentageCompleted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskPercentageCompletedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTaskPercentageCompletedResult" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SurveyDataExportSoapIn">
+    <wsdl:part name="parameters" element="tns:SurveyDataExport" />
+  </wsdl:message>
+  <wsdl:message name="SurveyDataExportSoapOut">
+    <wsdl:part name="parameters" element="tns:SurveyDataExportResponse" />
+  </wsdl:message>
+  <wsdl:message name="SurveyDataExportDefaultSoapIn">
+    <wsdl:part name="parameters" element="tns:SurveyDataExportDefault" />
+  </wsdl:message>
+  <wsdl:message name="SurveyDataExportDefaultSoapOut">
+    <wsdl:part name="parameters" element="tns:SurveyDataExportDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRecurrencePatternSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRecurrencePattern" />
+  </wsdl:message>
+  <wsdl:message name="SetRecurrencePatternSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRecurrencePatternResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLogEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskLogEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLogEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskLogEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskPercentageCompletedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskPercentageCompleted" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskPercentageCompletedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskPercentageCompletedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TaskManagementSoap">
+    <wsdl:operation name="SurveyDataExport">
+      <wsdl:input message="tns:SurveyDataExportSoapIn" />
+      <wsdl:output message="tns:SurveyDataExportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SurveyDataExportDefault">
+      <wsdl:input message="tns:SurveyDataExportDefaultSoapIn" />
+      <wsdl:output message="tns:SurveyDataExportDefaultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRecurrencePattern">
+      <wsdl:input message="tns:SetRecurrencePatternSoapIn" />
+      <wsdl:output message="tns:SetRecurrencePatternSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLogEntries">
+      <wsdl:input message="tns:GetTaskLogEntriesSoapIn" />
+      <wsdl:output message="tns:GetTaskLogEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatus">
+      <wsdl:input message="tns:GetTaskStatusSoapIn" />
+      <wsdl:output message="tns:GetTaskStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPercentageCompleted">
+      <wsdl:input message="tns:GetTaskPercentageCompletedSoapIn" />
+      <wsdl:output message="tns:GetTaskPercentageCompletedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskManagementSoap" type="tns:TaskManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SurveyDataExport">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SurveyDataExport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyDataExportDefault">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SurveyDataExportDefault" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRecurrencePattern">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetRecurrencePattern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLogEntries">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskLogEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatus">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPercentageCompleted">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskPercentageCompleted"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskManagementSoap12" type="tns:TaskManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SurveyDataExport">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SurveyDataExport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SurveyDataExportDefault">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SurveyDataExportDefault"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRecurrencePattern">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetRecurrencePattern" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLogEntries">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskLogEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatus">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPercentageCompleted">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTaskPercentageCompleted"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskManagement">
+    <wsdl:port name="TaskManagementSoap" binding="tns:TaskManagementSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/TaskManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskManagementSoap12" binding="tns:TaskManagementSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/TaskManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

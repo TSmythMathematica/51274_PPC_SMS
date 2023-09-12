@@ -1,0 +1,10 @@
+The following web-site URLs were removed from tlkpLocatingAttemptType:
+
+LexisNexis:
+http://www.lexisnexis.com/risk/
+
+Dir Assist (Online): 
+http://www.masterfiles.com/Reach411/
+
+Accurint:
+https://secure.accurint.com/app/bps/main

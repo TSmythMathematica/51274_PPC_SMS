@@ -1,0 +1,3520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="MainTable">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>693.3233pt</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>32.49987pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Section6">
+                      <ReportItems>
+                        <Textbox Name="Region">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CF_RegionHeader.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.09986in</Top>
+                          <Left>0.03889in</Left>
+                          <Height>0.15708in</Height>
+                          <Width>1.57361in</Width>
+                          <Style>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Supervisor">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CR_vwCapiValidation1_Supervisor.Value</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>20.49987pt</Top>
+                          <Left>2.79982pt</Left>
+                          <Height>12pt</Height>
+                          <Width>113.29992pt</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>LimeGreen</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>3.00001pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox252">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox252</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>16.50001pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Tablix Name="Tablix11">
+                      <TablixBody>
+                        <TablixColumns>
+                          <TablixColumn>
+                            <Width>116.1216pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>54.1224pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>46.76472pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>52.43688pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>50.62392pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>50.17392pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>49.12344pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>37.72368pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>41.22432pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>47.67408pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>47.36088pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>46.56744pt</Width>
+                          </TablixColumn>
+                          <TablixColumn>
+                            <Width>53.40528pt</Width>
+                          </TablixColumn>
+                        </TablixColumns>
+                        <TablixRows>
+                          <TablixRow>
+                            <Height>16.50024pt</Height>
+                            <TablixCells>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field2">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=Fields!CR_vwCapiValidation1_InterviewerName.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>8</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Textbox254">
+                                    <CanGrow>true</CanGrow>
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumCompletes.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_NumCompletes.Value))</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <rd:DefaultName>Textbox254</rd:DefaultName>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field5">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value))
+'Fields!CF_FormNumCom.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>2</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field14">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va01.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va01.Value))
+'Fields!CF_FormVal01.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>6</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field15">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va02.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va02.Value))
+'Fields!CF_FormVal01.Value
+'Fields!CF_FormVal02.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>4</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field32">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va03.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va03.Value))
+'Fields!CF_FormVal03.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>3</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field16">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va04.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va04.Value))
+'Fields!CF_FormVal04.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>8</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field18">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va05.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va05.Value))
+
+'Fields!CF_FormVal05.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>5</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field19">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va06.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va06.Value))
+'Fields!CF_FormVal06.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>9</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field20">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va07.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va07.Value))
+'Fields!CF_FormVal07.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>10</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="Field21">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va08.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va08.Value))
+'Fields!CF_FormVal08.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>7</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="FormVal091">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va09.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va09.Value))
+'Fields!CF_FormVal09.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                              <TablixCell>
+                                <CellContents>
+                                  <Textbox Name="FormVal101">
+                                    <KeepTogether>true</KeepTogether>
+                                    <Paragraphs>
+                                      <Paragraph>
+                                        <TextRuns>
+                                          <TextRun>
+                                            <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va10.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va10.Value))
+'Fields!CF_FormVal10.Value</Value>
+                                            <Style>
+                                              <FontFamily>Times New Roman</FontFamily>
+                                              <FontWeight>Bold</FontWeight>
+                                              <Color>#000000</Color>
+                                            </Style>
+                                          </TextRun>
+                                        </TextRuns>
+                                        <Style>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Paragraph>
+                                    </Paragraphs>
+                                    <ZIndex>1</ZIndex>
+                                    <Style>
+                                      <Border>
+                                        <Style>Solid</Style>
+                                      </Border>
+                                      <BackgroundColor>#ffffff</BackgroundColor>
+                                    </Style>
+                                  </Textbox>
+                                </CellContents>
+                              </TablixCell>
+                            </TablixCells>
+                          </TablixRow>
+                        </TablixRows>
+                      </TablixBody>
+                      <TablixColumnHierarchy>
+                        <TablixMembers>
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                          <TablixMember />
+                        </TablixMembers>
+                      </TablixColumnHierarchy>
+                      <TablixRowHierarchy>
+                        <TablixMembers>
+                          <TablixMember>
+                            <Group Name="Details" />
+                          </TablixMember>
+                        </TablixMembers>
+                      </TablixRowHierarchy>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Tablix>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>14.50002pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Section7">
+                      <ReportItems>
+                        <Tablix Name="Tablix12">
+                          <TablixBody>
+                            <TablixColumns>
+                              <TablixColumn>
+                                <Width>1.6041in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.76017in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.65088in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.73284in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.6916in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.70377in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.68227in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.52286in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.57621in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.66238in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.65822in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.64245in</Width>
+                              </TablixColumn>
+                              <TablixColumn>
+                                <Width>0.73742in</Width>
+                              </TablixColumn>
+                            </TablixColumns>
+                            <TablixRows>
+                              <TablixRow>
+                                <Height>0.19097in</Height>
+                                <TablixCells>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Text13">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>Region Total</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Left</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>2</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field12">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumCompletes.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_NumCompletes.Value))
+'=sum(Fields!CR_vwCapiValidation1_NumCompletes.Value)
+'Code.CF_sNumComReg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>1</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field13">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value))
+'=Sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value)
+'Code.CF_sNumSelReg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>3</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field1">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va01.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va01.Value))
+'=Sum(Fields!CR_vwCapiValidation1_Va01.Value)
+'Code.CF_SVal01Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>4</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field6">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va02.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va02.Value))
+'Code.CF_Sval02Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>7</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field7">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va03.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va03.Value))
+'Code.CF_sVal03Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>1</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field9">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va04.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va04.Value))
+'Code.CF_SVal04Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>6</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field17">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va05.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va05.Value))
+'Code.CF_sval05Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>11</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field22">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va06.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va06.Value))
+'Code.CF_sval06Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>10</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field24">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va07.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va07.Value))
+'Code.CF_sval07Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>5</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="Field26">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va08.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va08.Value))
+'Code.CF_sval08Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>2</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="sval09Reg1">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va09.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va09.Value))
+'Code.CF_sval09Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>3</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                  <TablixCell>
+                                    <CellContents>
+                                      <Textbox Name="sval10Reg1">
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va10.Value) is nothing,0,sum(Fields!CR_vwCapiValidation1_Va10.Value))
+'Code.CF_sval10Reg</Value>
+                                                <Style>
+                                                  <FontFamily>Times New Roman</FontFamily>
+                                                  <FontWeight>Bold</FontWeight>
+                                                  <Color>#000000</Color>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <ZIndex>4</ZIndex>
+                                        <Style>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <BackgroundColor>#c0c0c0</BackgroundColor>
+                                        </Style>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixCell>
+                                </TablixCells>
+                              </TablixRow>
+                            </TablixRows>
+                          </TablixBody>
+                          <TablixColumnHierarchy>
+                            <TablixMembers>
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                              <TablixMember />
+                            </TablixMembers>
+                          </TablixColumnHierarchy>
+                          <TablixRowHierarchy>
+                            <TablixMembers>
+                              <TablixMember>
+                                <Group Name="Details1">
+                                  <GroupExpressions>
+                                    <GroupExpression>=Fields!CR_vwCapiValidation1_RegionID.Value</GroupExpression>
+                                  </GroupExpressions>
+                                </Group>
+                              </TablixMember>
+                            </TablixMembers>
+                          </TablixRowHierarchy>
+                          <Height>0.19097in</Height>
+                          <Width>9.62517in</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Tablix>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <ZIndex>1</ZIndex>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>63.25001pt</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Section4">
+                      <ReportItems>
+                        <Textbox Name="SumofFormVal011">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumCompletes.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_NumCompletes.Value,"Dataset0"))
+'=sum(Fields!CR_vwCapiValidation1_NumCompletes.Value,"Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Left>1.6128in</Left>
+                          <Height>0.20486in</Height>
+                          <Width>0.75147in</Width>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Text14">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Grand Total</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Height>0.20486in</Height>
+                          <Width>1.59532in</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field11">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value,"Dataset0"))
+'=Sum(Fields!CR_vwCapiValidation1_NumSelectedForValidation.Value, "Dataset0")
+'Sum(Fields!CF_FormNumSel.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>170.43661pt</Left>
+                          <Height>14.74984pt</Height>
+                          <Width>46.65439pt</Width>
+                          <ZIndex>2</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field30">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va01.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va01.Value,"Dataset0"))
+'=Sum(Fields!CR_vwCapiValidation1_Va01.Value, "Dataset0")
+'Sum(Fields!CF_FormVal01.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>217.00865pt</Left>
+                          <Height>14.74984pt</Height>
+                          <Width>52.19404pt</Width>
+                          <ZIndex>3</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field25">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va02.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va02.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal02.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>269.20269pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>50.44843pt</Width>
+                          <ZIndex>4</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field27">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va03.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va03.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal03.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>319.65111pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>49.67141pt</Width>
+                          <ZIndex>5</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field29">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va04.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va04.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal04.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>370.32252pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>49.12356pt</Width>
+                          <ZIndex>6</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field31">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va05.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va05.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal05.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>419.44609pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>37.49942pt</Width>
+                          <ZIndex>7</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field33">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va06.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va06.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal06.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>457.09169pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>40.6768pt</Width>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field35">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va07.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va07.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal07.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>497.94995pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>48.04028pt</Width>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Field37">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va08.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va08.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal08.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25pt</Top>
+                          <Left>546.29738pt</Left>
+                          <Height>14.74984pt</Height>
+                          <Width>46.82473pt</Width>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="SumofFormVal081">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va09.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va09.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal09.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0.25pt</Top>
+                          <Left>593.66162pt</Left>
+                          <Height>14.74984pt</Height>
+                          <Width>46.25643pt</Width>
+                          <ZIndex>11</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="SumofFormVal082">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=iif(sum(Fields!CR_vwCapiValidation1_Va10.Value,"Dataset0") is nothing,0,sum(Fields!CR_vwCapiValidation1_Va10.Value,"Dataset0"))
+'Sum(Fields!CF_FormVal10.Value, "Dataset0")</Value>
+                                  <Style>
+                                    <FontFamily>Times New Roman</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#000000</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Top>0pt</Top>
+                          <Left>639.91805pt</Left>
+                          <Height>14.99984pt</Height>
+                          <Width>52.61415pt</Width>
+                          <ZIndex>12</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>#ffff00</BackgroundColor>
+                          </Style>
+                        </Textbox>
+                      </ReportItems>
+                      <DataElementOutput>ContentsOnly</DataElementOutput>
+                      <Style />
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="MainTable_Grouping_1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!CR_vwCapiValidation1_RegionID.Value</GroupExpression>
+                </GroupExpressions>
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!CR_vwCapiValidation1_RegionID.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="MainTable_Grouping_2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!CR_vwCapiValidation1_InterviewerName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!CR_vwCapiValidation1_InterviewerName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="MainTable_Details_Group">
+                        <DataElementName>Detail</DataElementName>
+                      </Group>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <DataElementName>Detail_Collection</DataElementName>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Dataset0</DataSetName>
+        <Top>0in</Top>
+        <Left>0.00556in</Left>
+        <Height>129.74992pt</Height>
+        <Width>693.3233pt</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>129.74992pt</Height>
+    <Style />
+  </Body>
+  <Width>693.72362pt</Width>
+  <Page>
+    <PageHeader>
+      <Height>128.00016pt</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Text3">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>SMS - Field Management
+Interviewer Validation Report</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0pt</Top>
+          <Left>0.39997pt</Left>
+          <Height>48.75pt</Height>
+          <Width>689.28331pt</Width>
+          <Style>
+            <Border>
+              <Color>#000000</Color>
+              <Style>Solid</Style>
+            </Border>
+            <TopBorder>
+              <Width>2pt</Width>
+            </TopBorder>
+            <BottomBorder>
+              <Width>2pt</Width>
+            </BottomBorder>
+            <LeftBorder>
+              <Width>2pt</Width>
+            </LeftBorder>
+            <RightBorder>
+              <Width>2pt</Width>
+            </RightBorder>
+            <BackgroundColor>#ffff00</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text4">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Number Selected</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>2.36983in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.63989in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text2">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Number of Completes</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>1.61805in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.74079in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text5">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Phone In Progress</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>3.02361in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.70698in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text6">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Phone Validated</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>3.74097in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.70419in</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text7">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Phone Not Validated</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>4.44515in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.68988in</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text1">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Phone Refusal</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>5.14892in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.66138in</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text8">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Mailed Form</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>5.82419in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.50005in</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text9">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Mail Validated</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>6.34729in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.57172in</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text10">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Mail  Not 
+Validated</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>6.91901in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.64985in</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text15">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Mail Refusal</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>7.5803in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.64435in</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text11">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Undecided</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>8.24418in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.62856in</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <RightBorder>
+              <Style>None</Style>
+            </RightBorder>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Textbox Name="Text12">
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Status Not Set</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>1.35681in</Top>
+          <Left>8.88663in</Left>
+          <Height>0.42097in</Height>
+          <Width>0.73742in</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>#ffffff</BackgroundColor>
+          </Style>
+        </Textbox>
+        <Rectangle Name="Rectangle7">
+          <ReportItems>
+            <Textbox Name="Textbox190">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=ReportItems("Region").Value</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox190</rd:DefaultName>
+              <Left>0.0573in</Left>
+              <Height>0.1875in</Height>
+              <Width>1.53194in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox191">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=ReportItems("Supervisor").Value</Value>
+                      <Style>
+                        <FontFamily>Times New Roman</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox190</rd:DefaultName>
+              <Top>0.1875in</Top>
+              <Left>0.03889in</Left>
+              <Height>0.20569in</Height>
+              <Width>1.53194in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Top>1.35681in</Top>
+          <Left>0.00556in</Left>
+          <Height>0.42097in</Height>
+          <Width>1.6125in</Width>
+          <ZIndex>13</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <BackgroundColor>LimeGreen</BackgroundColor>
+          </Style>
+        </Rectangle>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=format(today,"d")</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.74653in</Top>
+          <Left>8.57893in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>79.5pt</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.45708in</Top>
+          <Left>8.41319in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageFooter>
+    <PageHeight>9.72222in</PageHeight>
+    <PageWidth>10in</PageWidth>
+    <LeftMargin>0.2in</LeftMargin>
+    <RightMargin>0.07986in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.17986in</BottomMargin>
+    <ColumnSpacing>0pt</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SDS_SMSBaseV5">
+      <DataSourceReference>SDS_SMSBaseV5</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>f624c435-f873-482d-bf28-972530d5f552</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Dataset0">
+      <Query>
+        <DataSourceName>SDS_SMSBaseV5</DataSourceName>
+        <CommandText>SELECT
+  [vwCapiValidation1].[RegionID] AS [CR_vwCapiValidation1_RegionID],
+  [vwCapiValidation1].[RegionName] AS [CR_vwCapiValidation1_RegionName],
+  [vwCapiValidation1].[SupervisorID] AS [CR_vwCapiValidation1_SupervisorID],
+  [vwCapiValidation1].[Supervisor] AS [CR_vwCapiValidation1_Supervisor],
+  [vwCapiValidation1].[TeamID] AS [CR_vwCapiValidation1_TeamID],
+  [vwCapiValidation1].[TeamName] AS [CR_vwCapiValidation1_TeamName],
+  [vwCapiValidation1].[InterviewerID] AS [CR_vwCapiValidation1_InterviewerID],
+  [vwCapiValidation1].[InterviewerName] AS [CR_vwCapiValidation1_InterviewerName],
+  [vwCapiValidation1].[NumSelectedForValidation] AS [CR_vwCapiValidation1_NumSelectedForValidation],
+  [vwCapiValidation1].[NumCompletes] AS [CR_vwCapiValidation1_NumCompletes],
+  [vwCapiValidation1].[Va01] AS [CR_vwCapiValidation1_Va01],
+  [vwCapiValidation1].[Va02] AS [CR_vwCapiValidation1_Va02],
+  [vwCapiValidation1].[Va03] AS [CR_vwCapiValidation1_Va03],
+  [vwCapiValidation1].[Va04] AS [CR_vwCapiValidation1_Va04],
+  [vwCapiValidation1].[Va05] AS [CR_vwCapiValidation1_Va05],
+  [vwCapiValidation1].[Va06] AS [CR_vwCapiValidation1_Va06],
+  [vwCapiValidation1].[Va07] AS [CR_vwCapiValidation1_Va07],
+  [vwCapiValidation1].[Va08] AS [CR_vwCapiValidation1_Va08],
+  [vwCapiValidation1].[Va09] AS [CR_vwCapiValidation1_Va09],
+  [vwCapiValidation1].[Va10] AS [CR_vwCapiValidation1_Va10]
+ FROM 
+[vwValidationRpt] AS [vwCapiValidation1]
+where not [vwCapiValidation1].[RegionID] is null</CommandText>
+        <Timeout>30</Timeout>
+      </Query>
+      <Fields>
+        <Field Name="CR_vwCapiValidation1_RegionID">
+          <DataField>CR_vwCapiValidation1_RegionID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_RegionName">
+          <DataField>CR_vwCapiValidation1_RegionName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_SupervisorID">
+          <DataField>CR_vwCapiValidation1_SupervisorID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Supervisor">
+          <DataField>CR_vwCapiValidation1_Supervisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_TeamID">
+          <DataField>CR_vwCapiValidation1_TeamID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_TeamName">
+          <DataField>CR_vwCapiValidation1_TeamName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_InterviewerID">
+          <DataField>CR_vwCapiValidation1_InterviewerID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_InterviewerName">
+          <DataField>CR_vwCapiValidation1_InterviewerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_NumSelectedForValidation">
+          <DataField>CR_vwCapiValidation1_NumSelectedForValidation</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_NumCompletes">
+          <DataField>CR_vwCapiValidation1_NumCompletes</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va01">
+          <DataField>CR_vwCapiValidation1_Va01</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va02">
+          <DataField>CR_vwCapiValidation1_Va02</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va03">
+          <DataField>CR_vwCapiValidation1_Va03</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va04">
+          <DataField>CR_vwCapiValidation1_Va04</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va05">
+          <DataField>CR_vwCapiValidation1_Va05</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va06">
+          <DataField>CR_vwCapiValidation1_Va06</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va07">
+          <DataField>CR_vwCapiValidation1_Va07</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va08">
+          <DataField>CR_vwCapiValidation1_Va08</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va09">
+          <DataField>CR_vwCapiValidation1_Va09</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CR_vwCapiValidation1_Va10">
+          <DataField>CR_vwCapiValidation1_Va10</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CF_InterviewerIDname">
+          <Value>=Code.Calculate_CF_InterviewerIDname("")</Value>
+        </Field>
+        <Field Name="CF_FormRegionFooter">
+          <Value>=Code.Calculate_CF_FormRegionFooter("")</Value>
+        </Field>
+        <Field Name="CF_FormVal01">
+          <Value>=Code.Calculate_CF_FormVal01("")</Value>
+        </Field>
+        <Field Name="CF_FormVal02">
+          <Value>=Code.Calculate_CF_FormVal02("")</Value>
+        </Field>
+        <Field Name="CF_FormVal03">
+          <Value>=Code.Calculate_CF_FormVal03("")</Value>
+        </Field>
+        <Field Name="CF_FormVal04">
+          <Value>=Code.Calculate_CF_FormVal04("")</Value>
+        </Field>
+        <Field Name="CF_FormVal05">
+          <Value>=Code.Calculate_CF_FormVal05("")</Value>
+        </Field>
+        <Field Name="CF_FormVal06">
+          <Value>=Code.Calculate_CF_FormVal06("")</Value>
+        </Field>
+        <Field Name="CF_FormVal07">
+          <Value>=Code.Calculate_CF_FormVal07("")</Value>
+        </Field>
+        <Field Name="CF_FormVal08">
+          <Value>=Code.Calculate_CF_FormVal08("")</Value>
+        </Field>
+        <Field Name="CF_FormNumCom">
+          <Value>=Code.Calculate_CF_FormNumCom("")</Value>
+        </Field>
+        <Field Name="CF_FormNumSel">
+          <Value>=Code.Calculate_CF_FormNumSel("")</Value>
+        </Field>
+        <Field Name="CF_RegionHeader">
+          <Value>=Code.Calculate_CF_RegionHeader("", Fields!CR_vwCapiValidation1_RegionID.Value)</Value>
+        </Field>
+        <Field Name="CF_FormVal09">
+          <Value>=Code.Calculate_CF_FormVal09("")</Value>
+        </Field>
+        <Field Name="CF_FormVal10">
+          <Value>=Code.Calculate_CF_FormVal10("")</Value>
+        </Field>
+        <Field Name="GN_Group__1_Name">
+          <Value>=Code.Calculate_GN_Group__1_Name("", Fields!CR_vwCapiValidation1_RegionID.Value)</Value>
+        </Field>
+        <Field Name="GN_Group__2_Name">
+          <Value>=Code.Calculate_GN_Group__2_Name("", Fields!CR_vwCapiValidation1_InterviewerName.Value)</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code>Public Const ReportComments as String = ""
+Public Const ReportSubject as String = "Validation Report"
+Public Const ReportTitle as String = "SMS CAPI Validation"
+Public Const ReportAuthor as String = "Bea Jones"
+  ' report.SQLQueryString
+  ' SELECT "vwCapiValidation1"."RegionID", "vwCapiValidation1"."InterviewerName", "vwCapiValidation1"."NumCompletes", "vwCapiValidation1"."NumSelectedForValidation", "vwCapiValidation1"."Va01", "vwCapiValidation1"."Va02", "vwCapiValidation1"."Va03", "vwCapiValidation1"."Va04", "vwCapiValidation1"."Va05", "vwCapiValidation1"."Va06", "vwCapiValidation1"."Va07", "vwCapiValidation1"."Va08", "vwCapiValidation1"."Supervisor", "vwCapiValidation1"."Va09", "vwCapiValidation1"."Va10"
+  ' FROM   "SMSBaseV3"."dbo"."vwValidationRpt" "vwCapiValidation1"
+  ' ORDER BY "vwCapiValidation1"."RegionID", "vwCapiValidation1"."InterviewerName"
+#Region "Math"
+  Public Function MyPi() As Double
+    Return System.Math.PI
+  End Function
+#End Region
+#Region "String"
+  Public Overloads Function MyChrW(ByVal value As Double) As String
+    Return ChrW(CInt(value))
+  End Function
+  Public Function MyStrComp(ByVal String1 As String, ByVal String2 As String, Optional ByVal [Compare] As Double = 0) As Integer
+    Return String.Compare(String1, String2, CInt([Compare]) = 1)
+  End Function
+  Public Function MyProperCase(ByVal value As String) As String
+    Return StrConv(value, VbStrConv.ProperCase)
+  End Function
+  Public Function MyReplace(ByVal Expression As String, ByVal Find As String, ByVal Replacement As String, Optional ByVal Start As Double = 1, Optional ByVal Count As Double = -1, Optional ByVal [Compare] As Double = 0) As String
+    Return Replace(Expression, Find, Replacement, CInt(Start), CInt(Count), CType(CInt([Compare]), CompareMethod))
+  End Function
+  Public Function MySplit(ByVal Expression As String, Optional ByVal Delimiter As String = " ", Optional ByVal Limit As Double = -1, Optional ByVal [Compare] As Double = 0) As String()
+    Return Split(Expression, Delimiter, CInt(Limit), CType(CInt([Compare]), CompareMethod))
+  End Function
+  Public Function MyReplicateString(ByVal value As String, ByVal Count As Double) As String
+    Dim builder As New System.Text.StringBuilder
+    For i As Integer = 1 To CInt(Count)
+      builder.Append(value)
+    Next
+    Return builder.ToString()
+  End Function
+  Public Function MyMid(ByVal str As String, ByVal Start As Double) As String
+    Return Mid(str, CInt(Start))
+  End Function
+  Public Function MyMid(ByVal str As String, ByVal Start As Double, ByVal Length As Double) As String
+    Return Mid(str, CInt(Start), CInt(Length))
+  End Function
+
+  Public Function MyFilter(ByVal inputStrings As String(), ByVal searchString As String, Optional ByVal include As Boolean = True, Optional ByVal [Compare] As Double = 0) As String()
+    If (inputStrings Is Nothing) _
+    OrElse (inputStrings.Length = 0) Then Return inputStrings
+
+    Dim list As New System.Collections.ArrayList(inputStrings.Length)
+    For i As Integer = inputStrings.GetLowerBound(0) To inputStrings.GetUpperBound(0)
+      Dim st As String = inputStrings(i)
+
+      If (1 &lt;= InStr(searchString, st, CType(CInt([Compare]), CompareMethod))) = include Then
+        list.Add(st)
+      End If
+    Next i
+
+    Return CType(list.ToArray(GetType(String)), String())
+  End Function
+#Region "MyToText"
+  Public Function MyToText(ByVal value As String) As String
+    Return value
+  End Function
+  Public Function MyToText(ByVal value As Boolean) As String
+    Return value.ToString()
+  End Function
+  Public Function MyToText(ByVal value As Double, Optional ByVal decimaldigits As Double = 15, Optional ByVal groupseparator As String = ",", Optional ByVal decimalseparator As String = ".") As String
+    Dim nfi As System.Globalization.NumberFormatInfo = System.Threading.Thread.CurrentThread.CurrentUICulture.NumberFormat
+    If (decimalseparator &lt;&gt; nfi.NumberDecimalSeparator) _
+    OrElse (CInt(decimaldigits) &lt;&gt; nfi.NumberDecimalDigits) _
+    OrElse (groupseparator &lt;&gt; nfi.NumberGroupSeparator) Then
+      nfi = CType(nfi.Clone(), System.Globalization.NumberFormatInfo)
+      nfi.NumberDecimalSeparator = decimalseparator
+      nfi.NumberDecimalDigits = Math.Max(Math.Min(CInt(decimaldigits), 99), 0)
+      nfi.NumberGroupSeparator = groupseparator
+    End If
+
+    Return value.ToString(nfi)
+  End Function
+  Public Function MyToText(ByVal value As Double, ByVal format As String, Optional ByVal decimaldigits As Double = 15, Optional ByVal groupseparator As String = ",", Optional ByVal decimalseparator As String = ".") As String
+    Dim nfi As System.Globalization.NumberFormatInfo = System.Threading.Thread.CurrentThread.CurrentUICulture.NumberFormat
+    If (decimalseparator &lt;&gt; nfi.NumberDecimalSeparator) _
+    OrElse (CInt(decimaldigits) &lt;&gt; nfi.NumberDecimalDigits) _
+    OrElse (groupseparator &lt;&gt; nfi.NumberGroupSeparator) Then
+      nfi = CType(nfi.Clone(), System.Globalization.NumberFormatInfo)
+      nfi.NumberDecimalSeparator = decimalseparator
+      nfi.NumberDecimalDigits = Math.Max(Math.Min(CInt(decimaldigits), 99), 0)
+      nfi.NumberGroupSeparator = groupseparator
+    End If
+
+    Return value.ToString(format, nfi)
+  End Function
+  Public Function MyToText(ByVal value As Date, ByVal format As String, Optional ByVal amdesignator As String = "AM", Optional ByVal pmdesignator As String = "PM") As String
+    Dim dfi As System.Globalization.DateTimeFormatInfo = System.Threading.Thread.CurrentThread.CurrentUICulture.DateTimeFormat
+    If (amdesignator &lt;&gt; dfi.AMDesignator) _
+    OrElse (pmdesignator &lt;&gt; dfi.PMDesignator) Then
+      dfi = CType(dfi.Clone(), System.Globalization.DateTimeFormatInfo)
+      dfi.AMDesignator = amdesignator
+      dfi.PMDesignator = pmdesignator
+    End If
+
+    Return value.ToString(format, dfi)
+  End Function
+#End Region
+#End Region
+#Region "DateTime"
+#Region "CurrentDate, CurrentTime, CurrentDateTime"
+  Public Function MyCurrentDate() As Date
+    Return Date.Today
+  End Function
+  Public Function MyCurrentDateTime() As Date
+    Return Date.Now
+  End Function
+  Public Function MyCurrentTime() As Date
+    Dim now As Date = Date.Now
+    Return New Date(1, 1, 1, now.Hour, now.Minute, now.Second, now.Millisecond)
+  End Function
+#End Region
+#Region "DateSerial, TimeSerial, DateTimeSerial"
+  Public Function MyDateSerial(ByVal Year As Double, ByVal Month As Double, ByVal Day As Double) As Date
+    Try
+      Dim result As New Date(CInt(Year), 1, 1)
+      result = result.AddMonths(CInt(Month) - 1)
+      result = result.AddDays(CInt(Day) - 1)
+      Return result
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDateTimeSerial(ByVal Year As Double, ByVal Month As Double, ByVal Day As Double, ByVal Hour As Double, ByVal Minute As Double, ByVal Second As Double) As Date
+    Try
+      Dim result As New Date(CInt(Year), 1, 1)
+      result = result.AddMonths(CInt(Month) - 1)
+      result = result.AddDays(CInt(Day) - 1)
+      result = result.AddHours(CInt(Hour))
+      result = result.AddMinutes(CInt(Minute))
+      result = result.AddSeconds(CInt(Second))
+      Return result
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyTimeSerial(ByVal Hour As Double, ByVal Minute As Double, ByVal Second As Double) As Date
+    Try
+      Dim result As New Date(1, 1, 1)
+      result = result.AddHours(CInt(Hour))
+      result = result.AddMinutes(CInt(Minute))
+      result = result.AddSeconds(CInt(Second))
+      Return result
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+#End Region
+#Region "Date"
+  Public Function MyDate(ByVal value As Double) As Date
+    Try
+      Return Date.FromOADate(Math.Floor(value))
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDate(ByVal value As String) As Date
+    Try
+      Return Date.Parse(value)
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDate(ByVal value As Date) As Date
+    Return New Date(value.Year, value.Hour, value.Month)
+  End Function
+  Public Function MyDate(ByVal Year As Double, ByVal Month As Double, ByVal Day As Double) As Date
+    Return MyDateSerial(Year, Month, Day)
+  End Function
+#End Region
+#Region "Time"
+  Public Function MyTime(ByVal value As Double) As Date
+    Try
+      Return Date.FromOADate(value - Math.Floor(value))
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyTime(ByVal value As String) As Date
+    Try
+      Return Date.Parse(value)
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyTime(ByVal value As Date) As Date
+    Return New Date(1, 1, 1, value.Hour, value.Minute, value.Second, value.Millisecond)
+  End Function
+  Public Function MyTime(ByVal Hour As Double, ByVal Minute As Double, ByVal Second As Double) As Date
+    Try
+      Return MyTimeSerial(Hour, Minute, Second)
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+#End Region
+#Region "DateTime"
+  Public Function MyDateTime(ByVal value As Double) As Date
+    Try
+      Return Date.FromOADate(value)
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDateTime(ByVal value As String) As Date
+    Try
+      Return Date.Parse(value)
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDateTime(ByVal [date] As Date) As Date
+    Return New Date([date].Year, [date].Hour, [date].Month)
+  End Function
+  Public Function MyDateTime(ByVal [date] As Date, ByVal [time] As Date) As Date
+    Return New Date([date].Year, [date].Hour, [date].Month, [time].Hour, [time].Minute, [time].Second, [time].Millisecond)
+  End Function
+  Public Function MyDateTime(ByVal Year As Double, ByVal Month As Double, ByVal Day As Double) As Date
+    Try
+      Return MyDateSerial(CInt(Year), CInt(Month), CInt(Day))
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+  Public Function MyDateTime(ByVal Year As Double, ByVal Month As Double, ByVal Day As Double, ByVal Hour As Double, ByVal Minute As Double, ByVal Second As Double) As Date
+    Try
+      Return MyDateTimeSerial(CInt(Year), CInt(Month), CInt(Day), CInt(Hour), CInt(Minute), CInt(Second))
+    Catch
+      Return Date.MinValue
+    End Try
+  End Function
+#End Region
+#Region "Timer"
+  Public Function MyTimer() As Integer
+    Dim now As Date = Date.Now
+    Return (now.Hour * 60 + now.Minute) * 60 + now.Second
+  End Function
+#End Region
+#End Region
+#Region "Type Conversion"
+  Public Function MyCBool(ByVal value As Object) As Boolean
+    Try
+      Return CBool(value)
+    Catch
+      Return False
+    End Try
+  End Function
+  Public Function MyCDbl(ByVal value As Object) As Double
+    Try
+      Return CDbl(value)
+    Catch
+      Return 0
+    End Try
+  End Function
+#End Region
+#Region "CreateArrayCopy"
+  Public Function CreateArrayCopy(ByVal ParamArray value() As Boolean) As Boolean()
+    If value Is Nothing Then Return Nothing
+
+    Dim result() As Boolean
+    ReDim result(value.Length - 1)
+
+  End Function
+  Public Function CreateArrayCopy(ByVal ParamArray value() As Double) As Double()
+    If value Is Nothing Then Return Nothing
+
+    Dim result() As Double
+    ReDim result(value.Length - 1)
+    System.Array.Copy(value, result, value.Length)
+
+    Return result
+  End Function
+  Public Function CreateArrayCopy(ByVal ParamArray value() As String) As String()
+    If value Is Nothing Then Return Nothing
+
+    Dim result() As String
+    ReDim result(value.Length - 1)
+    System.Array.Copy(value, result, value.Length)
+
+    Return result
+  End Function
+  Public Function CreateArrayCopy(ByVal ParamArray value() As DateTime) As DateTime()
+    If value Is Nothing Then Return Nothing
+
+    Dim result() As DateTime
+    ReDim result(value.Length - 1)
+    System.Array.Copy(value, result, value.Length)
+
+    Return result
+  End Function
+#End Region
+#Region "Count"
+  Public Function Count(ByVal value() As Double) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function Count(ByVal value() As Boolean) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function Count(ByVal value() As String) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function Count(ByVal value() As DateTime) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+#End Region
+#Region "UBound"
+  Public Function UBound(ByVal value() As Double) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function UBound(ByVal value() As Boolean) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function UBound(ByVal value() As String) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+  Public Function UBound(ByVal value() As DateTime) As Integer
+    If value Is Nothing Then Return 0
+
+    Return value.GetUpperBound(0) - value.GetLowerBound(0) + 1
+  End Function
+#End Region
+#Region "Comparers"
+  Private Class BooleanComparer
+    Implements System.Collections.IComparer
+
+    Public Shared Function MyCompare(ByVal x As Boolean, ByVal y As Boolean) As Integer
+      If x = y Then
+        Return 0
+      Else
+        If x = True Then
+          Return 1
+        Else
+          Return -1
+        End If
+      End If
+    End Function
+
+    Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
+      Return MyCompare(CBool(x), CBool(y))
+    End Function
+  End Class
+  Private Class DoubleComparer
+    Implements System.Collections.IComparer
+
+    Public Shared Function MyCompare(ByVal x As Double, ByVal y As Double) As Integer
+      If x &lt; y Then
+        Return -1
+      ElseIf y &lt; x Then
+        Return 1
+      Else
+        Return 0
+      End If
+    End Function
+
+    Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
+      Return MyCompare(CDbl(x), CDbl(y))
+    End Function
+  End Class
+  Private Class StringComparer
+    Implements System.Collections.IComparer
+
+    Public Shared Function MyCompare(ByVal x As String, ByVal y As String) As Integer
+      Return String.Compare(x, y, True)
+    End Function
+
+    Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
+      Return MyCompare(CStr(x), CStr(y))
+    End Function
+  End Class
+  Private Class DateTimeComparer
+    Implements System.Collections.IComparer
+
+    Public Shared Function MyCompare(ByVal x As DateTime, ByVal y As DateTime) As Integer
+      If x &lt; y Then
+        Return -1
+      ElseIf y &lt; x Then
+        Return 1
+      Else
+        Return 0
+      End If
+    End Function
+
+    Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
+      Return MyCompare(CDate(x), CDate(y))
+    End Function
+  End Class
+#End Region
+#Region "Minimum"
+  Public Function Minimum(ByVal value() As Boolean) As Boolean
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As Boolean = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As Boolean = value(i)
+
+      If BooleanComparer.MyCompare(x, result) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Minimum(ByVal value() As Double) As Double
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As Double = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As Double = value(i)
+
+      If DoubleComparer.MyCompare(x, result) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Minimum(ByVal value() As String) As String
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As String = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As String = value(i)
+
+      If StringComparer.MyCompare(x, result) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Minimum(ByVal value() As DateTime) As DateTime
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As DateTime = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As DateTime = value(i)
+
+      If DateTimeComparer.MyCompare(x, result) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+#End Region
+#Region "Maximum"
+  Public Function Maximum(ByVal value() As Boolean) As Boolean
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As Boolean = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As Boolean = value(i)
+
+      If BooleanComparer.MyCompare(result, x) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Maximum(ByVal value() As Double) As Double
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As Double = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As Double = value(i)
+
+      If DoubleComparer.MyCompare(result, x) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Maximum(ByVal value() As String) As String
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As String = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As String = value(i)
+
+      If StringComparer.MyCompare(result, x) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+  Public Function Maximum(ByVal value() As DateTime) As DateTime
+    If value Is Nothing _
+    OrElse value.Length = 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Dim i_start As Integer = value.GetLowerBound(0)
+    Dim i_end As Integer = value.GetUpperBound(0)
+
+    Dim result As DateTime = value(i_start)
+    For i As Integer = i_start + 1 To i_end
+      Dim x As DateTime = value(i)
+
+      If DateTimeComparer.MyCompare(result, x) &lt; 0 Then result = x
+    Next i
+
+    Return result
+  End Function
+#End Region
+#Region "DistinctCount"
+  Public Function DistinctCount(ByVal value() As Double) As Integer
+    If value Is Nothing Then Return 0
+    If value.Length = 0 Then Return 0
+
+    Dim tmp() As Double = CreateArrayCopy(value)
+
+    Dim result As Integer = 1
+    For i As Integer = 1 To tmp.Length - 1
+      If DoubleComparer.MyCompare(tmp(i - 1), tmp(i)) &lt;&gt; 0 Then
+        result += 1
+      End If
+    Next i
+
+    Return result
+  End Function
+  Public Function DistinctCount(ByVal value() As Boolean) As Integer
+    If value Is Nothing Then Return 0
+    If value.Length = 0 Then Return 0
+
+    Dim tmp() As Boolean = CreateArrayCopy(value)
+
+    Dim result As Integer = 1
+    For i As Integer = 1 To tmp.Length - 1
+      If BooleanComparer.MyCompare(tmp(i - 1), tmp(i)) &lt;&gt; 0 Then
+        result += 1
+      End If
+    Next i
+
+    Return result
+  End Function
+  Public Function DistinctCount(ByVal value() As String) As Integer
+    If value Is Nothing Then Return 0
+    If value.Length = 0 Then Return 0
+
+    Dim tmp() As String = CreateArrayCopy(value)
+
+    Dim result As Integer = 1
+    For i As Integer = 1 To tmp.Length - 1
+      If StringComparer.MyCompare(tmp(i - 1), tmp(i)) &lt;&gt; 0 Then
+        result += 1
+      End If
+    Next i
+
+    Return result
+  End Function
+  Public Function DistinctCount(ByVal value() As DateTime) As Integer
+    If value Is Nothing Then Return 0
+    If value.Length = 0 Then Return 0
+
+    Dim tmp() As DateTime = CreateArrayCopy(value)
+
+    Dim result As Integer = 1
+    For i As Integer = 1 To tmp.Length - 1
+      If DateTimeComparer.MyCompare(tmp(i - 1), tmp(i)) &lt;&gt; 0 Then
+        result += 1
+      End If
+    Next i
+
+    Return result
+  End Function
+#End Region
+#Region "[Double] Sum, Average, Variance, PopulationVariance, StdDev, PopulationStdDev"
+  Public Function Sum(ByVal value() As Double) As Double
+    If value Is Nothing Then Return 0
+
+    Dim result As Double = 0
+    For i As Integer = value.GetLowerBound(0) To value.GetUpperBound(0)
+      result += value(i)
+    Next
+
+    Return result
+  End Function
+  Public Function Average(ByVal value() As Double) As Double
+    Dim _count As Integer = Count(value)
+    If _count &lt;= 0 Then Throw New Exception("The size of the array must be greater than 0")
+
+    Return Sum(value) / _count
+  End Function
+  Private Function PreVariance(ByVal value() As Double) As Double
+    Dim result As Double = 0
+    Dim avg As Double = Average(value)
+
+    For i As Integer = value.GetLowerBound(0) To value.GetUpperBound(0)
+      Dim x As Double = value(i) - avg
+      result += x * x
+    Next i
+
+    Return result
+  End Function
+  Public Function Variance(ByVal value() As Double) As Double
+    Dim _count As Integer = Count(value)
+    If _count &lt;= 1 Then Throw New Exception("The size of the array must be greater than 1")
+
+    Return PreVariance(value) / (_count - 1)
+  End Function
+  Public Function PopulationVariance(ByVal value() As Double) As Double
+    Dim _count As Integer = Count(value)
+    If _count &lt;= 1 Then Throw New Exception("The size of the array must be greater than 1")
+
+	  Return PreVariance(value) / _count
+	  End Function
+	  Public Function StdDev(ByVal value() As Double) As Double
+	  Return Math.Sqrt(Variance(value))
+	  End Function
+	  Public Function PopulationStdDev(ByVal value() As Double) As Double
+	  Return Math.Sqrt(PopulationVariance(value))
+	  End Function
+	  #End Region
+	  Public Function Calculate_CF_InterviewerIDname(DataRegion as String) as String
+	  '{vwCAPIValidation.FirstName}+{vwCAPIValidation.LastName}
+
+	  Calculate_CF_InterviewerIDname = String.Empty
+	  End Function
+
+	  Public Function Calculate_CF_FormRegionFooter(DataRegion as String) as String
+	  '"Region "+CStr ({vwCAPIValidation.Region},0)+" Total"
+
+	  Calculate_CF_FormRegionFooter = String.Empty
+	  End Function
+
+	  Public Function Calculate_CF_FormVal01(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.Va01}) then 0 Else {vwCapiValidation1.Va01}
+
+	  Calculate_CF_FormVal01 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal02(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.Va02}) then 0 Else {vwCapiValidation1.Va02}
+
+	  Calculate_CF_FormVal02 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal03(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA03}) then 0 Else {vwCapiValidation1.VA03}
+
+	  Calculate_CF_FormVal03 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal04(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA04}) then 0 Else {vwCapiValidation1.VA04}
+
+	  Calculate_CF_FormVal04 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal05(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA05}) then 0 Else {vwCapiValidation1.VA05}
+
+	  Calculate_CF_FormVal05 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal06(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA06}) then 0 Else {vwCapiValidation1.VA06}
+
+	  Calculate_CF_FormVal06 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal07(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.Va07}) then 0 Else {vwCapiValidation1.VA07}
+
+	  Calculate_CF_FormVal07 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal08(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA08}) then 0 Else {vwCapiValidation1.VA08}
+
+	  Calculate_CF_FormVal08 = 0
+	  End Function
+
+	  Public Function Calculate_CF_SVal01Reg(DataRegion as String, Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal01},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_SVal01Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_SVal01Reg = Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_SVal01Reg as Double = 0
+	  Public ReadOnly Property CF_SVal01Reg as Double
+	  Get
+	  Return _CF_SVal01Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_Sval02Reg(DataRegion as String, Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal02},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_Sval02Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_Sval02Reg = Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_Sval02Reg as Double = 0
+	  Public ReadOnly Property CF_Sval02Reg as Double
+	  Get
+	  Return _CF_Sval02Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sVal03Reg(DataRegion as String, Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal03},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sVal03Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sVal03Reg = Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sVal03Reg as Double = 0
+	  Public ReadOnly Property CF_sVal03Reg as Double
+	  Get
+	  Return _CF_sVal03Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_SVal04Reg(DataRegion as String, Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal04},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_SVal04Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_SVal04Reg = Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_SVal04Reg as Double = 0
+	  Public ReadOnly Property CF_SVal04Reg as Double
+	  Get
+	  Return _CF_SVal04Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sNumComReg(DataRegion as String, Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormNumCom},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sNumComReg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sNumComReg = Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sNumComReg as Double = 0
+	  Public ReadOnly Property CF_sNumComReg as Double
+	  Get
+	  Return _CF_sNumComReg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sNumSelReg(DataRegion as String, Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormNumSel},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sNumSelReg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sNumSelReg = Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sNumSelReg as Double = 0
+	  Public ReadOnly Property CF_sNumSelReg as Double
+	  Get
+	  Return _CF_sNumSelReg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sval05Reg(DataRegion as String, Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal05},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval05Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval05Reg = Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval05Reg as Double = 0
+	  Public ReadOnly Property CF_sval05Reg as Double
+	  Get
+	  Return _CF_sval05Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sval06Reg(DataRegion as String, Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal06},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval06Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval06Reg = Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval06Reg as Double = 0
+	  Public ReadOnly Property CF_sval06Reg as Double
+	  Get
+	  Return _CF_sval06Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sval07Reg(DataRegion as String, Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal07},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval07Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval07Reg = Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval07Reg as Double = 0
+	  Public ReadOnly Property CF_sval07Reg as Double
+	  Get
+	  Return _CF_sval07Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sval08Reg(DataRegion as String, Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal08},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval08Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval08Reg = Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval08Reg as Double = 0
+	  Public ReadOnly Property CF_sval08Reg as Double
+	  Get
+	  Return _CF_sval08Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_FormNumCom(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.NumCompletes}) then 0 Else {vwCapiValidation1.NumCompletes}
+	  '
+	  Calculate_CF_FormNumCom = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormNumSel(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.NumSelectedForValidation}) then 0 Else {vwCapiValidation1.NumSelectedForValidation}
+
+	  Calculate_CF_FormNumSel = 0
+	  End Function
+
+	  Public Function Calculate_CF_RegionHeader(DataRegion as String, Arg_CR_vwCapiValidation1_RegionID as Integer) as String
+	  '"Region - " + Cstr({vwCapiValidation1.RegionID},0)
+
+	  Calculate_CF_RegionHeader = String.Empty
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_RegionHeader = ("Region - ") + (MyToText(Arg_CR_vwCapiValidation1_RegionID, 0))
+
+	  End Function
+
+	  Public Function Calculate_CF_FormVal09(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA09}) then 0 Else {vwCapiValidation1.VA09}
+
+	  Calculate_CF_FormVal09 = 0
+	  End Function
+
+	  Public Function Calculate_CF_FormVal10(DataRegion as String) as Double
+	  'If IsNull({vwCapiValidation1.VA10}) then 0 Else {vwCapiValidation1.VA10}
+
+	  Calculate_CF_FormVal10 = 0
+	  End Function
+
+	  Public Function Calculate_CF_sval09Reg(DataRegion as String, Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal09},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval09Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval09Reg = Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval09Reg as Double = 0
+	  Public ReadOnly Property CF_sval09Reg as Double
+	  Get
+	  Return _CF_sval09Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_CF_sval10Reg(DataRegion as String, Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__ as Double) as Double
+	  'Sum({@FormVal10},{vwCapiValidation1.RegionID})
+
+	  Calculate_CF_sval10Reg = 0
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_CF_sval10Reg = Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__
+
+	  End Function
+
+	  Private _CF_sval10Reg as Double = 0
+	  Public ReadOnly Property CF_sval10Reg as Double
+	  Get
+	  Return _CF_sval10Reg
+	  End Get
+	  End Property
+
+	  Public Function Calculate_GN_Group__1_Name(DataRegion as String, Arg_CR_vwCapiValidation1_RegionID as Integer) as String
+	  'ToText ({vwCapiValidation1.RegionID})
+
+	  Calculate_GN_Group__1_Name = String.Empty
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_GN_Group__1_Name = MyToText(Arg_CR_vwCapiValidation1_RegionID)
+
+	  End Function
+
+	  Public Function Calculate_GN_Group__2_Name(DataRegion as String, Arg_CR_vwCapiValidation1_InterviewerName as String) as String
+	  'ToText ({vwCapiValidation1.InterviewerName})
+
+	  Calculate_GN_Group__2_Name = String.Empty
+	  Dim tmp_26B03311_8A3D_4230_972E_AF6460F749E2 as Boolean
+	  Calculate_GN_Group__2_Name = MyToText(Arg_CR_vwCapiValidation1_InterviewerName)
+
+	  End Function
+
+	  Public Function RecalculateFormulaFields_0(DataRegion as String) as String
+	  ' Calculate_CF_SVal01Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_Sval02Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sVal03Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_SVal04Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sNumComReg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sNumSelReg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval05Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval06Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval07Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval08Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval09Reg(DataRegion) --- cannot be recalculated on this level
+	  ' Calculate_CF_sval10Reg(DataRegion) --- cannot be recalculated on this level
+
+	  Return DataRegion
+	  End Function
+
+	  Public Function RecalculateFormulaFields_1(DataRegion as String, Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__ as Double) as String
+	  Calculate_CF_SVal01Reg(DataRegion, Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__)
+	  Calculate_CF_Sval02Reg(DataRegion, Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sVal03Reg(DataRegion, Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__)
+	  Calculate_CF_SVal04Reg(DataRegion, Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sNumComReg(DataRegion, Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sNumSelReg(DataRegion, Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval05Reg(DataRegion, Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval06Reg(DataRegion, Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval07Reg(DataRegion, Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval08Reg(DataRegion, Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval09Reg(DataRegion, Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval10Reg(DataRegion, Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__)
+
+	  Return DataRegion
+	  End Function
+
+	  Public Function RecalculateFormulaFields_2(DataRegion as String, Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__ as Double, Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__ as Double) as String
+	  Calculate_CF_SVal01Reg(DataRegion, Arg_SF_Sum____FormVal01____vwCapiValidation1_RegionID__)
+	  Calculate_CF_Sval02Reg(DataRegion, Arg_SF_Sum____FormVal02____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sVal03Reg(DataRegion, Arg_SF_Sum____FormVal03____vwCapiValidation1_RegionID__)
+	  Calculate_CF_SVal04Reg(DataRegion, Arg_SF_Sum____FormVal04____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sNumComReg(DataRegion, Arg_SF_Sum____FormNumCom____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sNumSelReg(DataRegion, Arg_SF_Sum____FormNumSel____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval05Reg(DataRegion, Arg_SF_Sum____FormVal05____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval06Reg(DataRegion, Arg_SF_Sum____FormVal06____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval07Reg(DataRegion, Arg_SF_Sum____FormVal07____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval08Reg(DataRegion, Arg_SF_Sum____FormVal08____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval09Reg(DataRegion, Arg_SF_Sum____FormVal09____vwCapiValidation1_RegionID__)
+	  Calculate_CF_sval10Reg(DataRegion, Arg_SF_Sum____FormVal10____vwCapiValidation1_RegionID__)
+
+	  Return DataRegion
+	  End Function
+
+  </Code>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>4fbc082c-d4c1-4a00-a206-166cb362c2f3</rd:ReportID>
+</Report>

@@ -1,0 +1,1139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="AddMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matrix" type="tns:SamplingMatrix" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SamplingMatrix">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUsed" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatrixId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dimensions" type="tns:ArrayOfDimension" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weights" type="tns:ArrayOfWeight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDimension">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Dimension" nillable="true" type="tns:Dimension" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Dimension">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="tns:SamplingState" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DimensionId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:DimensionType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Segments" type="tns:ArrayOfSegment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SamplingState">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DataTableOrdinal" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DimensionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Nominal" />
+          <s:enumeration value="Ordinal" />
+          <s:enumeration value="NonCollapsingAdjustTargets" />
+          <s:enumeration value="NonCollapsingKeepTargets" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfSegment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Segment" nillable="true" type="tns:Segment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Segment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SegmentId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Expression" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Weights" type="tns:ArrayOfSegmentWeight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSegmentWeight">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SegmentWeight" nillable="true" type="tns:SegmentWeight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SegmentWeight">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightId" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWeight">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Weight" nillable="true" type="tns:Weight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Weight">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddMatrixResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="matrix" type="tns:SamplingMatrix" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMatrixResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="matrixId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatrixResult" type="tns:SamplingMatrix" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="matrixId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMatrixResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddSamplingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="job" type="tns:SamplingJob" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SamplingJob">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdatedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSourceName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryExclusion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryExclusionPreDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryExclusionPostDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateExclusion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateExclusionPreDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateExclusionPostDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyExclusion" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryExclusionSurveyStatus" type="tns:SurveyStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateExclusionSurveyStatus" type="tns:SurveyStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyExclusionSurveyStatus" type="tns:SurveyStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="GenerateSampleFile" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseIndividualRestDays" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailingDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisregardInFutureDateExclusions" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectExclusion" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedProjectId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="JobId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncidenceRate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompletionRate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyValues" type="tns:ArrayOfPropertyValue" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyExclusions" type="tns:ArrayOfPropertyExclusion" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobFilters" type="tns:ArrayOfJobFilter" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubSamples" type="tns:ArrayOfSubSample" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categorization" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="SampleFileFields" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomGlobalCodes" type="tns:ArrayOfCustomCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SurveyStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Reserved" />
+          <s:enumeration value="MailSent" />
+          <s:enumeration value="SurveyEntered" />
+          <s:enumeration value="Completed" />
+          <s:enumeration value="Stopped" />
+          <s:enumeration value="None" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfPropertyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyValue" nillable="true" type="tns:PropertyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPropertyExclusion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertyExclusion" nillable="true"
+                     type="tns:PropertyExclusion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertyExclusion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExclusionPreDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExclusionPostDays" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfJobFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="JobFilter" nillable="true" type="tns:JobFilter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="JobFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Expression" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:JobFilterType" />
+          <s:element minOccurs="1" maxOccurs="1" name="JobId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurveyStatuses" type="tns:ArrayOfSurveyStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="JobFilterType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Exclude" />
+          <s:enumeration value="Include" />
+          <s:enumeration value="None" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfSurveyStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SurveyStatus" type="tns:SurveyStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSubSample">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SubSample" nillable="true" type="tns:SubSample" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubSample">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubSampleId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginalWeightId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatrixId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplyFiltersForDynamicTargets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseDynamicTargets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalTarget" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCustomCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomCode" nillable="true" type="tns:CustomCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddSamplingJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSamplingJobResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSamplingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="job" type="tns:SamplingJob" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSamplingJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSamplingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSamplingJobResult" type="tns:SamplingJob" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobByJobNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jobNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobByJobNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSamplingJobByJobNumberResult" type="tns:SamplingJob" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSamplingJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSamplingJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSamplingJobResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="settings" type="tns:ExecutionSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExecutionSettings">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PanelId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="JobId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobExecutingComment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PullToExpectedReturn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatePanel" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="GenerateSampleFile" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UploadSample" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UploadSettings" type="tns:UploadSettings" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UploadSettings">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UploadToSurveyId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommentToSampleUpload" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailSample" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailObject" type="tns:EmailObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReminderEmail" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReminderEmailObject" type="tns:EmailObject" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendReminderAfterDays" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmailObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ExecuteJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteJobResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSamplingJobRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="settings" type="tns:UploadSettings" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSamplingJobRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadSamplingJobRunResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastSamplingJobRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastSamplingJobRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastSamplingJobRunResult" type="tns:SamplingJobRunReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SamplingJobRunReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RunNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalOutgo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailingDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncidenceRate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompletionRate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubSamples" type="tns:ArrayOfSubSampleReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSubSampleReport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SubSampleReport" nillable="true"
+                     type="tns:SubSampleReport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubSampleReport">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SubSampleId" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="Available" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedTarget" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Actual" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dimensions" type="tns:ArrayOfReportDimension" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportDimension">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportDimension" nillable="true"
+                     type="tns:ReportDimension" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportDimension">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Segments" type="tns:ArrayOfReportSegment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReportSegment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReportSegment" nillable="true" type="tns:ReportSegment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReportSegment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailablePercent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedPercent" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualPercent" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSamplingJobRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSamplingJobRunResult" type="tns:SamplingJobRunReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveSamplingJobRunFromPanel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveSamplingJobRunFromPanelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveSamplingJobRunFromPanelResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSamplingJobRun">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="runNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSamplingJobRunResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteSamplingJobRunResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobRunNumberByTaskId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSamplingJobRunNumberByTaskIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSamplingJobRunNumberByTaskIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExternalSurveyLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyLinks" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddExternalSurveyLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddExternalSurveyLinksResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSurveyLinksStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="jobId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSurveyLinksStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSurveyLinksStatusResult" type="tns:SurveyLinksStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SurveyLinksStatus">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalLinksCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableLinksCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMatrix" />
+  </wsdl:message>
+  <wsdl:message name="AddMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMatrix" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatrix" />
+  </wsdl:message>
+  <wsdl:message name="GetMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMatrix" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMatrixResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSamplingJobSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSamplingJob" />
+  </wsdl:message>
+  <wsdl:message name="AddSamplingJobSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSamplingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSamplingJobSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSamplingJob" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSamplingJobSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSamplingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSamplingJob" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobByJobNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobByJobNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobByJobNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobByJobNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSamplingJobSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSamplingJob" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSamplingJobSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSamplingJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteJobSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteJob" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteJobSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSamplingJobRunSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSamplingJobRun" />
+  </wsdl:message>
+  <wsdl:message name="UploadSamplingJobRunSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSamplingJobRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSamplingJobRunSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastSamplingJobRun" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSamplingJobRunSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastSamplingJobRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobRunSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobRun" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobRunSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveSamplingJobRunFromPanelSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveSamplingJobRunFromPanel" />
+  </wsdl:message>
+  <wsdl:message name="RemoveSamplingJobRunFromPanelSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveSamplingJobRunFromPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSamplingJobRunSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSamplingJobRun" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSamplingJobRunSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSamplingJobRunResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobRunNumberByTaskIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobRunNumberByTaskId" />
+  </wsdl:message>
+  <wsdl:message name="GetSamplingJobRunNumberByTaskIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSamplingJobRunNumberByTaskIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddExternalSurveyLinksSoapIn">
+    <wsdl:part name="parameters" element="tns:AddExternalSurveyLinks" />
+  </wsdl:message>
+  <wsdl:message name="AddExternalSurveyLinksSoapOut">
+    <wsdl:part name="parameters" element="tns:AddExternalSurveyLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSurveyLinksStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSurveyLinksStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetSurveyLinksStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSurveyLinksStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SampleManagementSoap">
+    <wsdl:operation name="AddMatrix">
+      <wsdl:input message="tns:AddMatrixSoapIn" />
+      <wsdl:output message="tns:AddMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMatrix">
+      <wsdl:input message="tns:UpdateMatrixSoapIn" />
+      <wsdl:output message="tns:UpdateMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatrix">
+      <wsdl:input message="tns:GetMatrixSoapIn" />
+      <wsdl:output message="tns:GetMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMatrix">
+      <wsdl:input message="tns:DeleteMatrixSoapIn" />
+      <wsdl:output message="tns:DeleteMatrixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSamplingJob">
+      <wsdl:input message="tns:AddSamplingJobSoapIn" />
+      <wsdl:output message="tns:AddSamplingJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSamplingJob">
+      <wsdl:input message="tns:UpdateSamplingJobSoapIn" />
+      <wsdl:output message="tns:UpdateSamplingJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJob">
+      <wsdl:input message="tns:GetSamplingJobSoapIn" />
+      <wsdl:output message="tns:GetSamplingJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobByJobNumber">
+      <wsdl:input message="tns:GetSamplingJobByJobNumberSoapIn" />
+      <wsdl:output message="tns:GetSamplingJobByJobNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJob">
+      <wsdl:input message="tns:DeleteSamplingJobSoapIn" />
+      <wsdl:output message="tns:DeleteSamplingJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteJob">
+      <wsdl:input message="tns:ExecuteJobSoapIn" />
+      <wsdl:output message="tns:ExecuteJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSamplingJobRun">
+      <wsdl:input message="tns:UploadSamplingJobRunSoapIn" />
+      <wsdl:output message="tns:UploadSamplingJobRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSamplingJobRun">
+      <wsdl:input message="tns:GetLastSamplingJobRunSoapIn" />
+      <wsdl:output message="tns:GetLastSamplingJobRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRun">
+      <wsdl:input message="tns:GetSamplingJobRunSoapIn" />
+      <wsdl:output message="tns:GetSamplingJobRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSamplingJobRunFromPanel">
+      <wsdl:input message="tns:RemoveSamplingJobRunFromPanelSoapIn" />
+      <wsdl:output message="tns:RemoveSamplingJobRunFromPanelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJobRun">
+      <wsdl:input message="tns:DeleteSamplingJobRunSoapIn" />
+      <wsdl:output message="tns:DeleteSamplingJobRunSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRunNumberByTaskId">
+      <wsdl:input message="tns:GetSamplingJobRunNumberByTaskIdSoapIn" />
+      <wsdl:output message="tns:GetSamplingJobRunNumberByTaskIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExternalSurveyLinks">
+      <wsdl:input message="tns:AddExternalSurveyLinksSoapIn" />
+      <wsdl:output message="tns:AddExternalSurveyLinksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSurveyLinksStatus">
+      <wsdl:input message="tns:GetSurveyLinksStatusSoapIn" />
+      <wsdl:output message="tns:GetSurveyLinksStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SampleManagementSoap" type="tns:SampleManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddMatrix">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMatrix">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatrix">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMatrix">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSamplingJob">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddSamplingJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSamplingJob">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateSamplingJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJob">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobByJobNumber">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobByJobNumber"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJob">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteSamplingJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteJob">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/ExecuteJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSamplingJobRun">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UploadSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSamplingJobRun">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetLastSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRun">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSamplingJobRunFromPanel">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/RemoveSamplingJobRunFromPanel"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJobRun">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRunNumberByTaskId">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobRunNumberByTaskId"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExternalSurveyLinks">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddExternalSurveyLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSurveyLinksStatus">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSurveyLinksStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SampleManagementSoap12" type="tns:SampleManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddMatrix">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMatrix">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatrix">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMatrix">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSamplingJob">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddSamplingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSamplingJob">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateSamplingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJob">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobByJobNumber">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobByJobNumber"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJob">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteSamplingJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteJob">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/ExecuteJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSamplingJobRun">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UploadSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSamplingJobRun">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetLastSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRun">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSamplingJobRunFromPanel">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/RemoveSamplingJobRunFromPanel"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSamplingJobRun">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteSamplingJobRun" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSamplingJobRunNumberByTaskId">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSamplingJobRunNumberByTaskId"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExternalSurveyLinks">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddExternalSurveyLinks"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSurveyLinksStatus">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSurveyLinksStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SampleManagement">
+    <wsdl:port name="SampleManagementSoap" binding="tns:SampleManagementSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/SampleManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SampleManagementSoap12" binding="tns:SampleManagementSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/SampleManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

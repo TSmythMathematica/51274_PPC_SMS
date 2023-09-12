@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{372FCE99-3A59-4E42-A0D1-68C88513AE3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>MPR.SMS.CaseManagement</RootNamespace>
+    <AssemblyName>MPR.SMS.CaseManagement</AssemblyName>
+    <MyType>Windows</MyType>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/MPR.SMS.CaseManagement/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\MPR.SMS\Common Libraries\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.DocumentProcessing">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.DocumentProcessing.UserControls">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.UserControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.Security">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows.Forms">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MPR.SMS\Common Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmBatchTCPA.Designer.vb">
+      <DependentUpon>frmBatchTCPA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchTCPA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUpdateVariables.Designer.vb">
+      <DependentUpon>frmAddUpdateVariables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUpdateVariables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignCoder.designer.vb">
+      <DependentUpon>frmAssignCoder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAssignCoder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchClean.Designer.vb">
+      <DependentUpon>frmBatchClean.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchClean.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchCreate.Designer.vb">
+      <DependentUpon>frmBatchCreate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchCreate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchCreate2.designer.vb">
+      <DependentUpon>frmBatchCreate2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchCreate2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchInstrumentType.Designer.vb">
+      <DependentUpon>frmBatchInstrumentType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchInstrumentType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchReceive.Designer.vb">
+      <DependentUpon>frmBatchReceive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchReceive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBatchSearch.designer.vb">
+      <DependentUpon>frmBatchSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBatchSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirmitReport.Designer.vb">
+      <DependentUpon>frmConfirmitReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirmitReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocuments.Designer.vb">
+      <DependentUpon>frmDocuments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocuments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFieldManagement.Designer.vb">
+      <DependentUpon>frmFieldManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFieldManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManagementSummary.Designer.vb">
+      <DependentUpon>frmManagementSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManagementSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMPRIDSearch.Designer.vb">
+      <DependentUpon>frmMPRIDSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMPRIDSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchSurveyResponse.Designer.vb">
+      <DependentUpon>frmSearchSurveyResponse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchSurveyResponse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatusRuleCopy.Designer.vb">
+      <DependentUpon>frmStatusRuleCopy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatusRuleCopy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatusing.Designer.vb">
+      <DependentUpon>frmStatusing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatusing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentFilter.Designer.vb">
+      <DependentUpon>frmPaymentFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enumerations.vb" />
+    <Compile Include="frmAddressReview.Designer.vb">
+      <DependentUpon>frmAddressReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddressReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCaseLockAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDataImport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDisplayCase.Designer.vb">
+      <DependentUpon>frmDisplayCase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDisplayCase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentConfirm.Designer.vb">
+      <DependentUpon>frmPaymentConfirm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentConfirm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayments.Designer.vb">
+      <DependentUpon>frmPayments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayments.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.Designer.vb">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatus.Designer.vb">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatusRule.Designer.vb">
+      <DependentUpon>frmStatusRule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatusRule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentEntry.Designer.vb">
+      <DependentUpon>frmStudentEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurveyResponse.Designer.vb">
+      <DependentUpon>frmSurveyResponse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurveyResponse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurveyResponseByMPRID.Designer.vb">
+      <DependentUpon>frmSurveyResponseByMPRID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurveyResponseByMPRID.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurveySettings.Designer.vb">
+      <DependentUpon>frmSurveySettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurveySettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSurveySettingsUpdate.Designer.vb">
+      <DependentUpon>frmSurveySettingsUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSurveySettingsUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalCaseManagement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBatchTCPA.resx">
+      <DependentUpon>frmBatchTCPA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUpdateVariables.resx">
+      <DependentUpon>frmAddUpdateVariables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAssignCoder.resx">
+      <DependentUpon>frmAssignCoder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchClean.resx">
+      <DependentUpon>frmBatchClean.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchCreate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBatchCreate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchCreate2.resx">
+      <DependentUpon>frmBatchCreate2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchInstrumentType.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBatchInstrumentType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchReceive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBatchReceive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBatchSearch.resx">
+      <DependentUpon>frmBatchSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirmitReport.resx">
+      <DependentUpon>frmConfirmitReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocuments.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDocuments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFieldManagement.resx">
+      <DependentUpon>frmFieldManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManagementSummary.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmManagementSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMPRIDSearch.resx">
+      <DependentUpon>frmMPRIDSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchSurveyResponse.resx">
+      <DependentUpon>frmSearchSurveyResponse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatusRuleCopy.resx">
+      <DependentUpon>frmStatusRuleCopy.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentFilter.resx">
+      <DependentUpon>frmPaymentFilter.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddressReview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddressReview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaseLockAdmin.resx">
+      <DependentUpon>frmCaseLockAdmin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDataImport.resx">
+      <DependentUpon>frmDataImport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDisplayCase.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDisplayCase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentConfirm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPaymentConfirm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayments.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPayments.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatus.resx">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatusing.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStatusing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatusRule.resx">
+      <DependentUpon>frmStatusRule.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentEntry.resx">
+      <DependentUpon>frmStudentEntry.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurveyResponse.resx">
+      <DependentUpon>frmSurveyResponse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurveyResponseByMPRID.resx">
+      <DependentUpon>frmSurveyResponseByMPRID.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurveySettings.resx">
+      <DependentUpon>frmSurveySettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSurveySettingsUpdate.resx">
+      <DependentUpon>frmSurveySettingsUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MPR.SMS.DataQuality\MPR.SMS.DataQuality.vbproj">
+      <Project>{9EAEEA05-7AE2-4889-AC2E-15B3AEA8CF15}</Project>
+      <Name>MPR.SMS.DataQuality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.Data\MPR.SMS.Data.vbproj">
+      <Project>{085C2B48-648E-4ED3-90FF-F005272E70D7}</Project>
+      <Name>MPR.SMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.Locating\MPR.SMS.Locating.vbproj">
+      <Project>{7E799E2F-4DFA-4892-B366-15F25868BAD2}</Project>
+      <Name>MPR.SMS.Locating</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.UserControls\MPR.SMS.UserControls.vbproj">
+      <Project>{6dff75c8-35f9-44c1-9778-714a92ca6120}</Project>
+      <Name>MPR.SMS.UserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StatusReconciler\ConfirmitAPI.csproj">
+      <Project>{22424efb-a82f-4b06-84ba-e2cff7b1cadb}</Project>
+      <Name>ConfirmitAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20E36ED4-716E-439A-A439-C2911C8B4261}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>MPR.SMS</RootNamespace>
+    <AssemblyName>MPR.SMS</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <ApplicationIcon>Embedded Images\SMS.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>FA44A57ECB4408F28F4BA2B4C44DCF74255D0581</ManifestCertificateThumbprint>
+    <ManifestKeyFile>MPR.SMS_6_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\awsintdev1.mathematica.net\AWSIntDev1-WebSites\SMS-Launch\Launch\PPCDev\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-US</TargetCulture>
+    <ProductName>PPC Sample Management System</ProductName>
+    <PublisherName>Mathematica Policy Research</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>5.1.51274.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPR.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MPR.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MPR.SMS.DocumentProcessing">
+      <HintPath>..\..\SMSv5_SMS_VS2015_DEV\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.DocumentProcessing.UserControls">
+      <HintPath>..\..\SMSv5_SMS_VS2015_DEV\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.UserControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.Security">
+      <HintPath>..\..\SMSv5_SMS_VS2015_DEV\MPR.SMS\Common Libraries\MPR.SMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows">
+      <HintPath>..\..\SMSv5_SMS_VS2015_DEV\MPR.SMS\Common Libraries\MPR.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows.Forms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=223c9fdc2d11cb63">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SMSv5_SMS_VS2015_DEV\MPR.SMS\Common Libraries\MPR.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSMSMain.designer.vb">
+      <DependentUpon>frmSMSMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSMSMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalSMS.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSMSMain.resx">
+      <DependentUpon>frmSMSMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartup.resx">
+      <DependentUpon>frmStartup.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\AccurintBatch.xlsx" />
+    <None Include="MPR.SMS_1_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_2_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_3_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_4_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_5_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_6_TemporaryKey.pfx" />
+    <None Include="MPR.SMS_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MPR.SMS.CaseManagement\MPR.SMS.CaseManagement.vbproj">
+      <Project>{372FCE99-3A59-4E42-A0D1-68C88513AE3F}</Project>
+      <Name>MPR.SMS.CaseManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.DataQuality\MPR.SMS.DataQuality.vbproj">
+      <Project>{9EAEEA05-7AE2-4889-AC2E-15B3AEA8CF15}</Project>
+      <Name>MPR.SMS.DataQuality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.Data\MPR.SMS.Data.vbproj">
+      <Project>{085C2B48-648E-4ED3-90FF-F005272E70D7}</Project>
+      <Name>MPR.SMS.Data</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.FSM\MPR.SMS.FSM.vbproj">
+      <Project>{c75d5b73-8135-46ea-96ac-4c8fb3209000}</Project>
+      <Name>MPR.SMS.FSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.Locating\MPR.SMS.Locating.vbproj">
+      <Project>{7E799E2F-4DFA-4892-B366-15F25868BAD2}</Project>
+      <Name>MPR.SMS.Locating</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.UserControls\MPR.SMS.UserControls.vbproj">
+      <Project>{6dff75c8-35f9-44c1-9778-714a92ca6120}</Project>
+      <Name>MPR.SMS.UserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common Libraries\MPR.SMS.DocumentProcessing.dll" />
+    <None Include="Common Libraries\MPR.SMS.DocumentProcessing.UserControls.dll" />
+    <None Include="Common Libraries\MPR.SMS.Security.dll" />
+    <Content Include="Common Libraries\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Common Libraries\MPR.Crypto.dll" />
+    <Content Include="Embedded Images\Batching\icon_magnifyingGlass.png" />
+    <Content Include="Embedded Images\MathematicaLogo.bmp" />
+    <Content Include="Embedded Images\SMS5 icon.png" />
+    <None Include="Common Libraries\MPR.Windows.dll" />
+    <Content Include="Embedded Images\Batching\assign.gif" />
+    <Content Include="Embedded Images\Batching\batch.png" />
+    <Content Include="Embedded Images\Batching\check.png" />
+    <Content Include="Embedded Images\Batching\documents.gif" />
+    <Content Include="Embedded Images\Batching\dvd.gif" />
+    <Content Include="Embedded Images\Batching\FinalStatusHC.png" />
+    <Content Include="Embedded Images\Batching\mailbag.png" />
+    <Content Include="Embedded Images\Batching\mailQC.png" />
+    <Content Include="Embedded Images\Batching\re-assign.png" />
+    <Content Include="Embedded Images\Batching\receive.png" />
+    <Content Include="Embedded Images\Batching\stamp.png" />
+    <Content Include="Embedded Images\Batching\StatusDVD.png" />
+    <Content Include="Embedded Images\Batching\Supervisor.png" />
+    <Content Include="Embedded Images\Batching\TimeStampDVD2.png" />
+    <Content Include="Embedded Images\Facebook.ico" />
+    <Content Include="Embedded Images\maps.jpg" />
+    <None Include="Common Libraries\Interop.Excel.dll" />
+    <None Include="Common Libraries\Interop.IWshRuntimeLibrary.dll" />
+    <None Include="Common Libraries\Interop.Office.dll" />
+    <None Include="Common Libraries\Interop.VBIDE.dll" />
+    <None Include="Common Libraries\Interop.Word.dll" />
+    <None Include="Common Libraries\MPR.Windows.Forms.dll" />
+    <None Include="Common Libraries\MSMask.dll" />
+    <None Include="Docs\FW  FedEx Labels.msg" />
+    <None Include="Embedded Images\address.bmp" />
+    <None Include="Embedded Images\Best %28blue%29 Gray BG.bmp" />
+    <None Include="Embedded Images\Best %28green%29.bmp" />
+    <None Include="Embedded Images\Best %28red%29.bmp" />
+    <None Include="Embedded Images\Calendar.bmp" />
+    <None Include="Embedded Images\Best SampleMember.bmp" />
+    <None Include="Embedded Images\Best MailingAddress.bmp" />
+    <None Include="Embedded Images\Best PhysicalAddress.bmp" />
+    <None Include="Embedded Images\Best Phone.bmp" />
+    <None Include="Embedded Images\Best Email.bmp" />
+    <None Include="Embedded Images\Best CheckAddress.bmp" />
+    <None Include="Embedded Images\check.bmp" />
+    <None Include="Embedded Images\checkbox-checked.bmp" />
+    <None Include="Embedded Images\checkbox-unchecked.bmp" />
+    <None Include="Embedded Images\Close.BMP" />
+    <None Include="Embedded Images\document.bmp" />
+    <None Include="Embedded Images\document.ico" />
+    <None Include="Embedded Images\hide.bmp" />
+    <None Include="Embedded Images\Note.bmp" />
+    <None Include="Embedded Images\Phone2.bmp" />
+    <None Include="Embedded Images\email.bmp" />
+    <None Include="Embedded Images\empty.ico" />
+    <None Include="Embedded Images\lock-unavailable.bmp" />
+    <None Include="Embedded Images\empty.bmp" />
+    <None Include="Embedded Images\delete.bmp" />
+    <None Include="Embedded Images\new.bmp" />
+    <None Include="Embedded Images\Find.bmp" />
+    <None Include="Embedded Images\Home.bmp" />
+    <None Include="Embedded Images\insert.bmp" />
+    <None Include="Embedded Images\lock-owned.bmp" />
+    <None Include="Embedded Images\Open.bmp" />
+    <None Include="Embedded Images\Phone.bmp" />
+    <None Include="Embedded Images\Best %28blue%29.bmp" />
+    <None Include="Embedded Images\PrintPreview.bmp" />
+    <None Include="Embedded Images\rules.bmp" />
+    <None Include="Embedded Images\Save.bmp" />
+    <None Include="Embedded Images\search.bmp" />
+    <None Include="Embedded Images\search4people.ico" />
+    <None Include="Embedded Images\Send.bmp" />
+    <None Include="Embedded Images\show.bmp" />
+    <None Include="Embedded Images\barcode.ico" />
+    <None Include="Embedded Images\Quality-Duplicate.bmp" />
+    <None Include="Embedded Images\check.ico" />
+    <None Include="Embedded Images\rules2.bmp" />
+    <None Include="Embedded Images\SwitchPerson.ico" />
+    <None Include="Embedded Images\Collapse.bmp" />
+    <None Include="Embedded Images\Supervisor.bmp" />
+    <None Include="Embedded Images\document_mask.bmp" />
+    <None Include="Embedded Images\dqws.gif" />
+    <None Include="Embedded Images\Expand.bmp" />
+    <None Include="Embedded Images\Favorites.bmp" />
+    <None Include="Embedded Images\Filter.bmp" />
+    <None Include="Embedded Images\folder_closed.bmp" />
+    <None Include="Embedded Images\folder_Open.bmp" />
+    <None Include="Embedded Images\ie.bmp" />
+    <None Include="Embedded Images\NoAction.bmp" />
+    <None Include="Embedded Images\none.bmp" />
+    <None Include="Embedded Images\Regions.bmp" />
+    <None Include="Embedded Images\RPS.ico" />
+    <None Include="Embedded Images\priority-high.bmp" />
+    <None Include="Embedded Images\priority-low.bmp" />
+    <None Include="Embedded Images\Priority.bmp" />
+    <None Include="Embedded Images\Quality-Bad.bmp" />
+    <None Include="Embedded Images\Quality-Good.bmp" />
+    <None Include="Embedded Images\Refresh.bmp" />
+    <None Include="Embedded Images\search4files.ico" />
+    <None Include="Embedded Images\search4people.bmp" />
+    <None Include="Embedded Images\search4people_mask.bmp" />
+    <None Include="Docs\LocatingAttempts.txt" />
+    <None Include="Embedded Images\search4peoplegrey.bmp" />
+    <None Include="Embedded Images\Phonegrey.bmp" />
+    <Content Include="Embedded Images\SMS.ico" />
+    <None Include="Embedded Images\SuccessComplete.bmp" />
+    <None Include="Embedded Images\SwitchPerson.bmp" />
+    <None Include="Embedded Images\TreeView.bmp" />
+    <None Include="Embedded Images\Quality-Unknown.bmp" />
+    <None Include="Embedded Images\VerifyAddress.bmp" />
+    <None Include="Embedded Images\Warning.bmp" />
+    <None Include="Embedded Images\Sort.bmp" />
+    <None Include="Embedded Images\lock-none.bmp" />
+    <None Include="Embedded Images\update.bmp" />
+    <None Include="Embedded Images\person.bmp" />
+    <None Include="Embedded Images\person.ico" />
+    <None Include="Embedded Images\persons.bmp" />
+    <None Include="Embedded Images\persons.ico" />
+    <None Include="Embedded Images\Instrument.bmp" />
+    <None Include="Embedded Images\user.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Data.Access.Components.2.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Data Access Components 2.8</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Interop.Word">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Vbe.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MPR.Windows">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="office">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Prerequisite</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Prerequisite</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

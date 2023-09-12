@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:element name="InsertInterviewer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertInterviewerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertInterviewerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInterviewer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInterviewerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateInterviewerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteInterviewer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteInterviewerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteInterviewerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignInterviewersToProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userIds" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AssignInterviewersToProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssignInterviewersToProjectResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignInterviewerToProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectIds" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignInterviewerToProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AssignInterviewerToProjectsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageToInterviewers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userIds" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageContent" type="tns:MessageContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MessageContent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMessageToInterviewersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageToInterviewersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendIndividualMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageList" type="tns:ArrayOfMessageToInterviewer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessageToInterviewer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageToInterviewer" nillable="true"
+                     type="tns:MessageToInterviewer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageToInterviewer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="tns:MessageContent" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendIndividualMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendIndividualMessagesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageToAllInterviewers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageContent" type="tns:MessageContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageToAllInterviewersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSynchronizationLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastPageId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pagingForward" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="columnFilters" type="tns:ColumnFilters" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ColumnFilters">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConsoleNameFilter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterviewerUserIDFilter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DurationInSecondsFilter" type="tns:IntegerFilter" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompletedResponsesFilter" type="tns:IntegerFilter" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjectFilter" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusFilter" type="tns:Status" />
+          <s:element minOccurs="1" maxOccurs="1" name="SynchronizationMode" type="tns:SynchronizationMode" />
+          <s:element minOccurs="0" maxOccurs="1" name="PeriodFrom" type="tns:DateTimeFilter" />
+          <s:element minOccurs="0" maxOccurs="1" name="PeriodTo" type="tns:DateTimeFilter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IntegerFilter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Operator" type="tns:Operator" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Operator">
+        <s:restriction base="s:string">
+          <s:enumeration value="GreaterThan" />
+          <s:enumeration value="GreatherThanEqual" />
+          <s:enumeration value="LessThan" />
+          <s:enumeration value="LessThanEqual" />
+          <s:enumeration value="Equal" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="Status">
+        <s:restriction base="s:string">
+          <s:enumeration value="All" />
+          <s:enumeration value="Failed" />
+          <s:enumeration value="Success" />
+          <s:enumeration value="Running" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SynchronizationMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="All" />
+          <s:enumeration value="Auto" />
+          <s:enumeration value="Manual" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="DateTimeFilter">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSynchronizationLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSynchronizationLogResult"
+                       type="tns:ArrayOfSynchronizationLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSynchronizationLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SynchronizationLog" nillable="true"
+                     type="tns:SynchronizationLog" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SynchronizationLog">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConsoleName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Interviewer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Projects" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Responses" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SynchronizationStatus" type="tns:SynchronizationStatus" />
+          <s:element minOccurs="1" maxOccurs="1" name="SynchronizationType" type="tns:SynchronizationType" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SynchronizationStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Running" />
+          <s:enumeration value="Fail" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SynchronizationType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Automatic" />
+          <s:enumeration value="Manual" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetAssignedInterviewerUserIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAssignedInterviewerUserIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAssignedInterviewerUserIdsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllInterviewerUserIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllInterviewerUserIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllInterviewerUserIdsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateKeyResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertInterviewerSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertInterviewer" />
+  </wsdl:message>
+  <wsdl:message name="InsertInterviewerSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertInterviewerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInterviewerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInterviewer" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInterviewerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInterviewerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInterviewerSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteInterviewer" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInterviewerSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteInterviewerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignInterviewersToProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignInterviewersToProject" />
+  </wsdl:message>
+  <wsdl:message name="AssignInterviewersToProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignInterviewersToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignInterviewerToProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignInterviewerToProjects" />
+  </wsdl:message>
+  <wsdl:message name="AssignInterviewerToProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignInterviewerToProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageToInterviewersSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageToInterviewers" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageToInterviewersSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageToInterviewersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendIndividualMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:SendIndividualMessages" />
+  </wsdl:message>
+  <wsdl:message name="SendIndividualMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:SendIndividualMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageToAllInterviewersSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessageToAllInterviewers" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageToAllInterviewersSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageToAllInterviewersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSynchronizationLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSynchronizationLog" />
+  </wsdl:message>
+  <wsdl:message name="GetSynchronizationLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSynchronizationLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedInterviewerUserIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAssignedInterviewerUserIds" />
+  </wsdl:message>
+  <wsdl:message name="GetAssignedInterviewerUserIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAssignedInterviewerUserIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllInterviewerUserIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllInterviewerUserIds" />
+  </wsdl:message>
+  <wsdl:message name="GetAllInterviewerUserIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllInterviewerUserIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateKeySoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateKey" />
+  </wsdl:message>
+  <wsdl:message name="ValidateKeySoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CapiSoap">
+    <wsdl:operation name="InsertInterviewer">
+      <wsdl:input message="tns:InsertInterviewerSoapIn" />
+      <wsdl:output message="tns:InsertInterviewerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInterviewer">
+      <wsdl:input message="tns:UpdateInterviewerSoapIn" />
+      <wsdl:output message="tns:UpdateInterviewerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInterviewer">
+      <wsdl:input message="tns:DeleteInterviewerSoapIn" />
+      <wsdl:output message="tns:DeleteInterviewerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewersToProject">
+      <wsdl:input message="tns:AssignInterviewersToProjectSoapIn" />
+      <wsdl:output message="tns:AssignInterviewersToProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewerToProjects">
+      <wsdl:input message="tns:AssignInterviewerToProjectsSoapIn" />
+      <wsdl:output message="tns:AssignInterviewerToProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToInterviewers">
+      <wsdl:input message="tns:SendMessageToInterviewersSoapIn" />
+      <wsdl:output message="tns:SendMessageToInterviewersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendIndividualMessages">
+      <wsdl:input message="tns:SendIndividualMessagesSoapIn" />
+      <wsdl:output message="tns:SendIndividualMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToAllInterviewers">
+      <wsdl:input message="tns:SendMessageToAllInterviewersSoapIn" />
+      <wsdl:output message="tns:SendMessageToAllInterviewersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSynchronizationLog">
+      <wsdl:input message="tns:GetSynchronizationLogSoapIn" />
+      <wsdl:output message="tns:GetSynchronizationLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedInterviewerUserIds">
+      <wsdl:input message="tns:GetAssignedInterviewerUserIdsSoapIn" />
+      <wsdl:output message="tns:GetAssignedInterviewerUserIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInterviewerUserIds">
+      <wsdl:input message="tns:GetAllInterviewerUserIdsSoapIn" />
+      <wsdl:output message="tns:GetAllInterviewerUserIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateKey">
+      <wsdl:input message="tns:ValidateKeySoapIn" />
+      <wsdl:output message="tns:ValidateKeySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CapiSoap" type="tns:CapiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertInterviewer">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/InsertInterviewer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInterviewer">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateInterviewer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInterviewer">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteInterviewer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewersToProject">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AssignInterviewersToProject"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewerToProjects">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AssignInterviewerToProjects"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToInterviewers">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendMessageToInterviewers"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendIndividualMessages">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendIndividualMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToAllInterviewers">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendMessageToAllInterviewers"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSynchronizationLog">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSynchronizationLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedInterviewerUserIds">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAssignedInterviewerUserIds"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInterviewerUserIds">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllInterviewerUserIds"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateKey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/ValidateKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CapiSoap12" type="tns:CapiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertInterviewer">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/InsertInterviewer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInterviewer">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateInterviewer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInterviewer">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteInterviewer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewersToProject">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AssignInterviewersToProject"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignInterviewerToProjects">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AssignInterviewerToProjects"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToInterviewers">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendMessageToInterviewers"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendIndividualMessages">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendIndividualMessages"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToAllInterviewers">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SendMessageToAllInterviewers"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSynchronizationLog">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSynchronizationLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignedInterviewerUserIds">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAssignedInterviewerUserIds"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInterviewerUserIds">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllInterviewerUserIds"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateKey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/ValidateKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Capi">
+    <wsdl:port name="CapiSoap" binding="tns:CapiSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/capi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CapiSoap12" binding="tns:CapiSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/capi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

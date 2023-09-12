@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s1="http://microsoft.com/wsdl/types/"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastPageId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:BrowseListDirection" />
+            <s:element minOccurs="1" maxOccurs="1" name="getRunTimeContent" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="BrowseListDirection">
+        <s:restriction base="s:string">
+          <s:enumeration value="Next" />
+          <s:enumeration value="Previous" />
+          <s:enumeration value="First" />
+          <s:enumeration value="Last" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContentResult" type="tns:DatabaseContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatabaseContent">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:WsDbTable">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Relations" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="LanguageCodes" type="tns:ArrayOfInt" />
+              <s:element minOccurs="0" maxOccurs="1" name="Rows" type="tns:ArrayOfDatabaseContentRow" />
+              <s:element minOccurs="1" maxOccurs="1" name="AtEnd" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="WsDbTable">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableRelations" type="tns:ArrayOfWSDbRelation" />
+          <s:element minOccurs="0" maxOccurs="1" name="TableLanguages" type="tns:ArrayOfWsDbTableLang" />
+          <s:element minOccurs="0" maxOccurs="1" name="Columns" type="tns:ArrayOfWSDbColumn" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserdefinedColumns" type="tns:ArrayOfWSDbColumn" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefaultLanguageId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGenerated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSelfRef" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTimeDependent" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWSDbRelation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSDbRelation" nillable="true" type="tns:WSDbRelation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSDbRelation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RelationName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentTableId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChildTableId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RelationId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWsDbTableLang">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WsDbTableLang" nillable="true" type="tns:WsDbTableLang" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WsDbTableLang">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Caption" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LanguageId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWSDbColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSDbColumn" nillable="true" type="tns:WSDbColumn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSDbColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Length" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColumnType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLanguageTransparent" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatabaseContentRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatabaseContentRow" nillable="true"
+                     type="tns:DatabaseContentRow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatabaseContentRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="End" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageTexts" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RelationValues" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserdefinedColumnLanguageTexts"
+                     type="tns:ArrayOfDatabaseContentUserdefinedColumn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDatabaseContentUserdefinedColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DatabaseContentUserdefinedColumn" nillable="true"
+                     type="tns:DatabaseContentUserdefinedColumn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DatabaseContentUserdefinedColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageIds" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageTexts" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SynchronizeContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SynchronizeContentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbContent" type="tns:DatabaseContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateContentResult" type="tns:ArrayOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBoolean">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="boolean" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateContentInDesignAndRuntime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dbContent" type="tns:DatabaseContent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContentInDesignAndRuntimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateContentInDesignAndRuntimeResult"
+                       type="tns:ArrayOfBoolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idsToDelete" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteContentResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAllContentResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableIdsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSchema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="schemaName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateSchemaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHierarchyGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hierarchyId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHierarchyGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHierarchyGuidResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchemaGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchemaGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSchemaGuidResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newTable" type="tns:WsDbTable" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateTableResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDbRelation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newRelation" type="tns:WSDbRelation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDbRelationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateDbRelationResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHierarchies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHierarchiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHierarchiesResult" type="tns:ArrayOfWSHierarchy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWSHierarchy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSHierarchy" nillable="true" type="tns:WSHierarchy" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSHierarchy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Relations" type="tns:ArrayOfWSHierarchyRelation" />
+          <s:element minOccurs="0" maxOccurs="1" name="HierarchyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HierarchyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HierachyGuid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWSHierarchyRelation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WSHierarchyRelation" nillable="true"
+                     type="tns:WSHierarchyRelation" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WSHierarchyRelation">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RelationId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateHierarchy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newHierarchy" type="tns:WSHierarchy" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateHierarchyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateHierarchyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateTableResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateUserdefinedColumn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columnName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="columnWidth" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="languageIndependent" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserdefinedColumnResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteUserDefinedColumn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tableId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="columnName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserDefinedColumnResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSchemaName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSchemaNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSchemaNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableSchemaInfoFromSchemaGuid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableSchemaInfoFromSchemaGuidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableSchemaInfoFromSchemaGuidResult"
+                       type="tns:WsTableSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsTableSchema">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SchemaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SchemaGuid" type="s1:guid" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTableSchemaInfoFromSchemaId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="schemaId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTableSchemaInfoFromSchemaIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTableSchemaInfoFromSchemaIdResult" type="tns:WsTableSchema" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContent" />
+  </wsdl:message>
+  <wsdl:message name="GetContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SynchronizeContentSoapIn">
+    <wsdl:part name="parameters" element="tns:SynchronizeContent" />
+  </wsdl:message>
+  <wsdl:message name="SynchronizeContentSoapOut">
+    <wsdl:part name="parameters" element="tns:SynchronizeContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContent" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContentInDesignAndRuntimeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContentInDesignAndRuntime" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContentInDesignAndRuntimeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContentInDesignAndRuntimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteContent" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllContentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllContent" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllContentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableIds" />
+  </wsdl:message>
+  <wsdl:message name="GetTableIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSchema" />
+  </wsdl:message>
+  <wsdl:message name="CreateSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHierarchyGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHierarchyGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetHierarchyGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHierarchyGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchemaGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchemaGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTable" />
+  </wsdl:message>
+  <wsdl:message name="CreateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDbRelationSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDbRelation" />
+  </wsdl:message>
+  <wsdl:message name="CreateDbRelationSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDbRelationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHierarchiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHierarchies" />
+  </wsdl:message>
+  <wsdl:message name="GetHierarchiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHierarchiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateHierarchySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="CreateHierarchySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateTable" />
+  </wsdl:message>
+  <wsdl:message name="GenerateTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserdefinedColumnSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserdefinedColumn" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserdefinedColumnSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserdefinedColumnResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserDefinedColumnSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserDefinedColumn" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserDefinedColumnSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserDefinedColumnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchemaName" />
+  </wsdl:message>
+  <wsdl:message name="GetSchemaNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSchemaNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSchemaInfoFromSchemaGuidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableSchemaInfoFromSchemaGuid" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSchemaInfoFromSchemaGuidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableSchemaInfoFromSchemaGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSchemaInfoFromSchemaIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTableSchemaInfoFromSchemaId" />
+  </wsdl:message>
+  <wsdl:message name="GetTableSchemaInfoFromSchemaIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTableSchemaInfoFromSchemaIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DatabaseDesignerSoap">
+    <wsdl:operation name="GetContent">
+      <wsdl:input message="tns:GetContentSoapIn" />
+      <wsdl:output message="tns:GetContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeContent">
+      <wsdl:input message="tns:SynchronizeContentSoapIn" />
+      <wsdl:output message="tns:SynchronizeContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContent">
+      <wsdl:input message="tns:UpdateContentSoapIn" />
+      <wsdl:output message="tns:UpdateContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContentInDesignAndRuntime">
+      <wsdl:input message="tns:UpdateContentInDesignAndRuntimeSoapIn" />
+      <wsdl:output message="tns:UpdateContentInDesignAndRuntimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContent">
+      <wsdl:input message="tns:DeleteContentSoapIn" />
+      <wsdl:output message="tns:DeleteContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllContent">
+      <wsdl:input message="tns:DeleteAllContentSoapIn" />
+      <wsdl:output message="tns:DeleteAllContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableIds">
+      <wsdl:input message="tns:GetTableIdsSoapIn" />
+      <wsdl:output message="tns:GetTableIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchema">
+      <wsdl:input message="tns:CreateSchemaSoapIn" />
+      <wsdl:output message="tns:CreateSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyGuid">
+      <wsdl:input message="tns:GetHierarchyGuidSoapIn" />
+      <wsdl:output message="tns:GetHierarchyGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaGuid">
+      <wsdl:input message="tns:GetSchemaGuidSoapIn" />
+      <wsdl:output message="tns:GetSchemaGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <wsdl:input message="tns:CreateTableSoapIn" />
+      <wsdl:output message="tns:CreateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDbRelation">
+      <wsdl:input message="tns:CreateDbRelationSoapIn" />
+      <wsdl:output message="tns:CreateDbRelationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchies">
+      <wsdl:input message="tns:GetHierarchiesSoapIn" />
+      <wsdl:output message="tns:GetHierarchiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateHierarchy">
+      <wsdl:input message="tns:CreateHierarchySoapIn" />
+      <wsdl:output message="tns:CreateHierarchySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateTable">
+      <wsdl:input message="tns:GenerateTableSoapIn" />
+      <wsdl:output message="tns:GenerateTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserdefinedColumn">
+      <wsdl:input message="tns:CreateUserdefinedColumnSoapIn" />
+      <wsdl:output message="tns:CreateUserdefinedColumnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDefinedColumn">
+      <wsdl:input message="tns:DeleteUserDefinedColumnSoapIn" />
+      <wsdl:output message="tns:DeleteUserDefinedColumnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaName">
+      <wsdl:input message="tns:GetSchemaNameSoapIn" />
+      <wsdl:output message="tns:GetSchemaNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaGuid">
+      <wsdl:input message="tns:GetTableSchemaInfoFromSchemaGuidSoapIn" />
+      <wsdl:output message="tns:GetTableSchemaInfoFromSchemaGuidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaId">
+      <wsdl:input message="tns:GetTableSchemaInfoFromSchemaIdSoapIn" />
+      <wsdl:output message="tns:GetTableSchemaInfoFromSchemaIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DatabaseDesignerSoap" type="tns:DatabaseDesignerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContent">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeContent">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SynchronizeContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContent">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContentInDesignAndRuntime">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateContentInDesignAndRuntime"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContent">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllContent">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableIds">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchema">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyGuid">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetHierarchyGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaGuid">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSchemaGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDbRelation">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateDbRelation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchies">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetHierarchies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHierarchy">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateTable">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GenerateTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserdefinedColumn">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateUserdefinedColumn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDefinedColumn">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteUserDefinedColumn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaName">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSchemaName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaGuid">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableSchemaInfoFromSchemaGuid"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaId">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableSchemaInfoFromSchemaId"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DatabaseDesignerSoap12" type="tns:DatabaseDesignerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetContent">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeContent">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SynchronizeContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContent">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContentInDesignAndRuntime">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateContentInDesignAndRuntime"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContent">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllContent">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableIds">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchema">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchyGuid">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetHierarchyGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaGuid">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSchemaGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTable">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDbRelation">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateDbRelation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHierarchies">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetHierarchies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHierarchy">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateHierarchy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateTable">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GenerateTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserdefinedColumn">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/CreateUserdefinedColumn"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserDefinedColumn">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteUserDefinedColumn"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemaName">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetSchemaName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaGuid">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableSchemaInfoFromSchemaGuid"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTableSchemaInfoFromSchemaId">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTableSchemaInfoFromSchemaId"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DatabaseDesigner">
+    <wsdl:port name="DatabaseDesignerSoap" binding="tns:DatabaseDesignerSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/databasedesigner.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DatabaseDesignerSoap12" binding="tns:DatabaseDesignerSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/databasedesigner.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

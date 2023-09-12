@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{085C2B48-648E-4ED3-90FF-F005272E70D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MPR.SMS.Data</RootNamespace>
+    <AssemblyName>MPR.SMS.Data</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base Classes\ConnectionProvider.vb" />
+    <Compile Include="Base Classes\CustomMethods.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base Classes\DBInteractionBase.vb" />
+    <Compile Include="Base Classes\TblAddressNotes.vb" />
+    <Compile Include="Base Classes\TblBatch.vb" />
+    <Compile Include="Base Classes\TblBatchItem.vb" />
+    <Compile Include="Base Classes\TblCAINote.vb" />
+    <Compile Include="Base Classes\TblCaseValidation.vb" />
+    <Compile Include="Base Classes\TblCoderAssignments.vb" />
+    <Compile Include="Base Classes\TblCoderAssignmentsHistory.vb" />
+    <Compile Include="Base Classes\TblMelissa_Communication.vb" />
+    <Compile Include="Base Classes\TblMelissa_Results.vb" />
+    <Compile Include="Base Classes\TblSocialNetwork.vb" />
+    <Compile Include="Base Classes\TblSocialNetworkHistory.vb" />
+    <Compile Include="Base Classes\TlkpBatchType.vb" />
+    <Compile Include="Base Classes\TlkpBatchTypeStatus.vb" />
+    <Compile Include="Base Classes\TlkpCoders.vb" />
+    <Compile Include="Base Classes\TlkpFMStatus.vb" />
+    <Compile Include="Base Classes\TlkpInterviewerRegion.vb" />
+    <Compile Include="Base Classes\TblAddress.vb" />
+    <Compile Include="Base Classes\TblAddressHistory.vb" />
+    <Compile Include="Base Classes\TblCaseAssignment.vb" />
+    <Compile Include="Base Classes\TblCaseLock.vb" />
+    <Compile Include="Base Classes\TblCaseRA.vb" />
+    <Compile Include="Base Classes\TblInterviewerCaseTracking.vb" />
+    <Compile Include="Base Classes\TblInterviewerTracking.vb" />
+    <Compile Include="Base Classes\TblNote.vb" />
+    <Compile Include="Base Classes\TblCase.vb" />
+    <Compile Include="Base Classes\TblCaseHistory.vb" />
+    <Compile Include="Base Classes\TblClassroom.vb" />
+    <Compile Include="Base Classes\TblClassroomTeacher.vb" />
+    <Compile Include="Base Classes\TblDistrict.vb" />
+    <Compile Include="Base Classes\TblDocument.vb" />
+    <Compile Include="Base Classes\TblDocumentHistory.vb" />
+    <Compile Include="Base Classes\TblEmail.vb" />
+    <Compile Include="Base Classes\TblEmailHistory.vb" />
+    <Compile Include="Base Classes\TblInstrument.vb" />
+    <Compile Include="Base Classes\TblInstrumentHistory.vb" />
+    <Compile Include="Base Classes\TblLocatingAttempt.vb" />
+    <Compile Include="Base Classes\TblLocatingAttemptHistory.vb" />
+    <Compile Include="Base Classes\TblLocatingStatus.vb" />
+    <Compile Include="Base Classes\TblLocatingStatusHistory.vb" />
+    <Compile Include="Base Classes\TblPerson.vb" />
+    <Compile Include="Base Classes\TblPersonBest.vb" />
+    <Compile Include="Base Classes\TblPersonHistory.vb" />
+    <Compile Include="Base Classes\TblPersonRace.vb" />
+    <Compile Include="Base Classes\TblPhone.vb" />
+    <Compile Include="Base Classes\TblPhoneHistory.vb" />
+    <Compile Include="Base Classes\TblSchool.vb" />
+    <Compile Include="Base Classes\TblSite.vb" />
+    <Compile Include="Base Classes\TblStudent.vb" />
+    <Compile Include="Base Classes\TblTeacher.vb" />
+    <Compile Include="Base Classes\TlkpAddressReviewStatus.vb" />
+    <Compile Include="Base Classes\TlkpAddressReviewType.vb" />
+    <Compile Include="Base Classes\TlkpAddressType.vb" />
+    <Compile Include="Base Classes\TlkpAssignment.vb" />
+    <Compile Include="Base Classes\TlkpConsentType.vb" />
+    <Compile Include="Base Classes\TlkpDataImport.vb" />
+    <Compile Include="Base Classes\TlkpDocumentGroup.vb" />
+    <Compile Include="Base Classes\TlkpDocumentOutputType.vb" />
+    <Compile Include="Base Classes\TlkpDocumentStatus.vb" />
+    <Compile Include="Base Classes\TlkpDocumentType.vb" />
+    <Compile Include="Base Classes\TlkpEmailType.vb" />
+    <Compile Include="Base Classes\TlkpEntityType.vb" />
+    <Compile Include="Base Classes\TlkpGender.vb" />
+    <Compile Include="Base Classes\TlkpInstrumentType.vb" />
+    <Compile Include="Base Classes\TlkpInterviewer.vb" />
+    <Compile Include="Base Classes\TlkpInterviewerSupervisor.vb" />
+    <Compile Include="Base Classes\TlkpInterviewerTeam.vb" />
+    <Compile Include="Base Classes\TlkpInterviewWeek.vb" />
+    <Compile Include="Base Classes\TlkpLanguageType.vb" />
+    <Compile Include="Base Classes\TlkpLocatedPhoneSettings.vb" />
+    <Compile Include="Base Classes\TlkpLocatingAttemptResult.vb" />
+    <Compile Include="Base Classes\TlkpLocatingAttemptType.vb" />
+    <Compile Include="Base Classes\TlkpMelissaResultCode.vb" />
+    <Compile Include="Base Classes\TlkpMelissaResultCodeType.vb" />
+    <Compile Include="Base Classes\TlkpMobilityCode.vb" />
+    <Compile Include="Base Classes\TlkpMobilityType.vb" />
+    <Compile Include="Base Classes\TlkpNoteType.vb" />
+    <Compile Include="Base Classes\TlkpPhoneTime.vb" />
+    <Compile Include="Base Classes\TlkpPhoneType.vb" />
+    <Compile Include="Base Classes\TlkpRaceType.vb" />
+    <Compile Include="Base Classes\TlkpRelationshipType.vb" />
+    <Compile Include="Base Classes\TlkpReturnedMailReason.vb" />
+    <Compile Include="Base Classes\TlkpSettings.vb" />
+    <Compile Include="Base Classes\TlkpSocialNetworkStatus.vb" />
+    <Compile Include="Base Classes\TlkpSocialNetworkType.vb" />
+    <Compile Include="Base Classes\TlkpSourceQuality.vb" />
+    <Compile Include="Base Classes\TlkpSourceType.vb" />
+    <Compile Include="Base Classes\TlkpStates.vb" />
+    <Compile Include="Base Classes\TlkpStatus.vb" />
+    <Compile Include="Base Classes\TlkpStatusResult.vb" />
+    <Compile Include="Base Classes\TlkpStatusUpdateRule.vb" />
+    <Compile Include="Base Classes\TlkpStratificationCode.vb" />
+    <Compile Include="Base Classes\TlkpTimeZone.vb" />
+    <Compile Include="Base Classes\TlkpTimeZoneCode.vb" />
+    <Compile Include="Base Classes\TlkpValidationStatus.vb" />
+    <Compile Include="Base Classes\VwAllNotes.vb" />
+    <Compile Include="Base Classes\VwCaseAssignmentSearch.vb" />
+    <Compile Include="Base Classes\VwExtAccurintResult.vb" />
+    <Compile Include="Base Classes\VwExtTestSample.vb" />
+    <Compile Include="Base Classes\VwLocatingSelectionDetail.vb" />
+    <Compile Include="Collection Classes\AddressHistories.vb" />
+    <Compile Include="Collection Classes\AddressTypes.vb" />
+    <Compile Include="Collection Classes\Batches.vb" />
+    <Compile Include="Collection Classes\BatchItems.vb" />
+    <Compile Include="Collection Classes\CaseLocks.vb" />
+    <Compile Include="Collection Classes\Cases.vb" />
+    <Compile Include="Collection Classes\Classrooms.vb" />
+    <Compile Include="Collection Classes\AssignmentTypes.vb" />
+    <Compile Include="Collection Classes\CaseErrors.vb" />
+    <Compile Include="Collection Classes\ClassroomTeachers.vb" />
+    <Compile Include="Collection Classes\CoderAssignments.vb" />
+    <Compile Include="Collection Classes\Coders.vb" />
+    <Compile Include="Collection Classes\ConfirmitCallHistory.vb" />
+    <Compile Include="Collection Classes\ConsentTypes.vb" />
+    <Compile Include="Collection Classes\CaseAssignments.vb" />
+    <Compile Include="Collection Classes\InterviewerRegions.vb" />
+    <Compile Include="Collection Classes\InterviewerTrackings.vb" />
+    <Compile Include="Collection Classes\InterviewerCaseTrackings.vb" />
+    <Compile Include="Collection Classes\Interviewers.vb" />
+    <Compile Include="Collection Classes\InterviewerSupervisors.vb" />
+    <Compile Include="Collection Classes\InterviewerTeams.vb" />
+    <Compile Include="Collection Classes\InterviewWeeks.vb" />
+    <Compile Include="Collection Classes\LocatedPhoneSettings.vb" />
+    <Compile Include="Collection Classes\Notes.vb" />
+    <Compile Include="Collection Classes\NoteTypes.vb" />
+    <Compile Include="Collection Classes\SocialNetworks.vb" />
+    <Compile Include="Collection Classes\SocialNetworkStatuses.vb" />
+    <Compile Include="Collection Classes\SocialNetworkTypes.vb" />
+    <Compile Include="Collection Classes\TimeZoneCodes.vb" />
+    <Compile Include="Collection Classes\ValidationStatuses.vb" />
+    <Compile Include="Collection Classes\Settings.vb" />
+    <Compile Include="Collection Classes\LocatingAttempts.vb" />
+    <Compile Include="Collection Classes\LocatingAttemptTypes.vb" />
+    <Compile Include="Collection Classes\LocatingAttemptResults.vb" />
+    <Compile Include="Collection Classes\LocatingStatuses.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Collection Classes\MobilityCodes.vb" />
+    <Compile Include="Collection Classes\Districts.vb" />
+    <Compile Include="Collection Classes\Documents.vb" />
+    <Compile Include="Collection Classes\Duplicates.vb" />
+    <Compile Include="Collection Classes\Instruments.vb" />
+    <Compile Include="Collection Classes\Schools.vb" />
+    <Compile Include="Collection Classes\Sites.vb" />
+    <Compile Include="Collection Classes\States.vb" />
+    <Compile Include="Collection Classes\DataImports.vb" />
+    <Compile Include="Collection Classes\DocumentOutputTypes.vb" />
+    <Compile Include="Collection Classes\DocumentGroups.vb" />
+    <Compile Include="Collection Classes\DocumentStatuses.vb" />
+    <Compile Include="Collection Classes\DocumentTypes.vb" />
+    <Compile Include="Collection Classes\EmailTypes.vb" />
+    <Compile Include="Collection Classes\LanguageTypes.vb" />
+    <Compile Include="Collection Classes\AllNotes.vb" />
+    <Compile Include="Collection Classes\PersonHistories.vb" />
+    <Compile Include="Collection Classes\PersonRaces.vb" />
+    <Compile Include="Collection Classes\Persons.vb" />
+    <Compile Include="Collection Classes\PhoneTimes.vb" />
+    <Compile Include="Collection Classes\PhoneTypes.vb" />
+    <Compile Include="Collection Classes\RaceTypes.vb" />
+    <Compile Include="Collection Classes\RelationshipTypes.vb" />
+    <Compile Include="Collection Classes\ReturnedMailReasons.vb" />
+    <Compile Include="Collection Classes\SourceQualities.vb" />
+    <Compile Include="Collection Classes\SourceTypes.vb" />
+    <Compile Include="Collection Classes\Statuses.vb" />
+    <Compile Include="Collection Classes\Addresses.vb" />
+    <Compile Include="Collection Classes\Students.vb" />
+    <Compile Include="Collection Classes\Teachers.vb" />
+    <Compile Include="Derived Classes\Address.vb" />
+    <Compile Include="Derived Classes\AddressHistory.vb" />
+    <Compile Include="Derived Classes\AddressType.vb" />
+    <Compile Include="Derived Classes\Batch.vb" />
+    <Compile Include="Derived Classes\BatchItem.vb" />
+    <Compile Include="Derived Classes\BatchType.vb" />
+    <Compile Include="Derived Classes\Case.vb" />
+    <Compile Include="Derived Classes\CaseLock.vb" />
+    <Compile Include="Derived Classes\Classroom.vb" />
+    <Compile Include="Derived Classes\AssignmentType.vb" />
+    <Compile Include="Derived Classes\CaseRA.vb" />
+    <Compile Include="Derived Classes\CaseError.vb" />
+    <Compile Include="Derived Classes\ClassroomTeacher.vb" />
+    <Compile Include="Derived Classes\Coder.vb" />
+    <Compile Include="Derived Classes\CoderAssignment.vb" />
+    <Compile Include="Derived Classes\ConsentType.vb" />
+    <Compile Include="Derived Classes\CaseAssignment.vb" />
+    <Compile Include="Derived Classes\CaseValidation.vb" />
+    <Compile Include="Derived Classes\ExtTestSample.vb" />
+    <Compile Include="Derived Classes\FMStatus.vb" />
+    <Compile Include="Derived Classes\InterviewerRegion.vb" />
+    <Compile Include="Derived Classes\InterviewerCaseTracking.vb" />
+    <Compile Include="Derived Classes\InterviewerTracking.vb" />
+    <Compile Include="Derived Classes\Interviewer.vb" />
+    <Compile Include="Derived Classes\InterviewerSupervisor.vb" />
+    <Compile Include="Derived Classes\InterviewerTeam.vb" />
+    <Compile Include="Derived Classes\InterviewWeek.vb" />
+    <Compile Include="Derived Classes\LocatedPhoneSetting.vb" />
+    <Compile Include="Derived Classes\LocatingSelectionDetail.vb" />
+    <Compile Include="Derived Classes\Note.vb" />
+    <Compile Include="Derived Classes\NoteType.vb" />
+    <Compile Include="Derived Classes\SocialNetwork.vb" />
+    <Compile Include="Derived Classes\SocialNetworkHistory.vb" />
+    <Compile Include="Derived Classes\SocialNetworkStatus.vb" />
+    <Compile Include="Derived Classes\SocialNetworkType.vb" />
+    <Compile Include="Derived Classes\TimeZoneCode.vb" />
+    <Compile Include="Derived Classes\ValidationStatus.vb" />
+    <Compile Include="Derived Classes\Setting.vb" />
+    <Compile Include="Derived Classes\EmailHistory.vb" />
+    <Compile Include="Derived Classes\PhoneHistory.vb" />
+    <Compile Include="Derived Classes\LocatingAttempt.vb" />
+    <Compile Include="Derived Classes\LocatingAttemptType.vb" />
+    <Compile Include="Derived Classes\LocatingAttemptResult.vb" />
+    <Compile Include="Derived Classes\LocatingStatus.vb" />
+    <Compile Include="Derived Classes\MobilityCode.vb" />
+    <Compile Include="Derived Classes\District.vb" />
+    <Compile Include="Derived Classes\Document.vb" />
+    <Compile Include="Derived Classes\Duplicate.vb" />
+    <Compile Include="Derived Classes\Instrument.vb" />
+    <Compile Include="Derived Classes\PersonBest.vb" />
+    <Compile Include="Derived Classes\School.vb" />
+    <Compile Include="Derived Classes\Site.vb" />
+    <Compile Include="Derived Classes\State.vb" />
+    <Compile Include="Derived Classes\DataImport.vb" />
+    <Compile Include="Derived Classes\DocumentOutputType.vb" />
+    <Compile Include="Derived Classes\DocumentGroup.vb" />
+    <Compile Include="Derived Classes\DocumentStatus.vb" />
+    <Compile Include="Derived Classes\DocumentType.vb" />
+    <Compile Include="Collection Classes\Emails.vb" />
+    <Compile Include="Derived Classes\Email.vb" />
+    <Compile Include="Derived Classes\EmailType.vb" />
+    <Compile Include="Derived Classes\EntityType.vb" />
+    <Compile Include="Collection Classes\EntityTypes.vb" />
+    <Compile Include="Derived Classes\InstrumentType.vb" />
+    <Compile Include="Collection Classes\InstrumentTypes.vb" />
+    <Compile Include="Derived Classes\LanguageType.vb" />
+    <Compile Include="Derived Classes\AllNote.vb" />
+    <Compile Include="Derived Classes\Person.vb" />
+    <Compile Include="Derived Classes\PersonHistory.vb" />
+    <Compile Include="Collection Classes\Phones.vb" />
+    <Compile Include="Derived Classes\PersonRace.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Derived Classes\Phone.vb" />
+    <Compile Include="Derived Classes\PhoneTime.vb" />
+    <Compile Include="Derived Classes\PhoneType.vb" />
+    <Compile Include="Derived Classes\RaceType.vb" />
+    <Compile Include="Derived Classes\RelationshipType.vb" />
+    <Compile Include="Derived Classes\ReturnedMailReason.vb" />
+    <Compile Include="Derived Classes\SourceQuality.vb" />
+    <Compile Include="Derived Classes\SourceType.vb" />
+    <Compile Include="Derived Classes\Status.vb" />
+    <Compile Include="Derived Classes\Student.vb" />
+    <Compile Include="Derived Classes\Teacher.vb" />
+    <Compile Include="Enumerations.vb" />
+    <Compile Include="GlobalData.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Project.vb" />
+    <Compile Include="ProjectCollections.vb" />
+    <Compile Include="RealTimeProcess.vb" />
+    <Compile Include="SMSToConfirmit.vb" />
+    <Compile Include="SQLHelper.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base Classes\Stored Procedures\smsbasev4_MPRDataWizard_StoredProcedures.sql" />
+    <Content Include="Base Classes\Stored Procedures\SMSBaseV5_Demo_MPRDataWizard_StoredProcedures.sql" />
+    <Content Include="Base Classes\Stored Procedures\SMSBaseV5_MPRDataWizard_StoredProcedures.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StatusReconciler\ConfirmitAPI.csproj">
+      <Project>{22424efb-a82f-4b06-84ba-e2cff7b1cadb}</Project>
+      <Name>ConfirmitAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

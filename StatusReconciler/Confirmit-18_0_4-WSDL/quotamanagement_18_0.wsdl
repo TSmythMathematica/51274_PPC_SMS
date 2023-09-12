@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:element name="GetQuotaList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quotaMode" type="tns:QuotaMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="QuotaMode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Production" />
+          <s:enumeration value="Test" />
+          <s:enumeration value="DesignWithProductionCounter" />
+          <s:enumeration value="DesignWithTestCounter" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetQuotaListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuotaListResult" type="tns:QuotaList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QuotaList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="QuotaId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuotaName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuotaFullEmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldNames" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuotaRows" type="tns:ArrayOfQuotaRow" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsOptimistic" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuotaRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuotaRow" nillable="true" type="tns:QuotaRow" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuotaRow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="QuotaRowId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FieldPrecodes" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="Target" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Counter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LiveCounter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LiveTarget" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateQuotaList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaList" type="tns:QuotaList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateQuotaListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AdjustQuotaTarget">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quotaRowId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="deltaTarget" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdjustQuotaTargetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AdjustQuotaTargetResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteQuotaRows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaList" type="tns:QuotaList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteQuotaRowsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SynchronizeQuota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="DatabaseType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Production" />
+          <s:enumeration value="Test" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SynchronizeQuotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RecalculateQuota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="quotaName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecalculateQuotaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetQuotaNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quotaMode" type="tns:QuotaMode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQuotaNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQuotaNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQuotaListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuotaList" />
+  </wsdl:message>
+  <wsdl:message name="GetQuotaListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuotaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuotaListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateQuotaList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQuotaListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateQuotaListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AdjustQuotaTargetSoapIn">
+    <wsdl:part name="parameters" element="tns:AdjustQuotaTarget" />
+  </wsdl:message>
+  <wsdl:message name="AdjustQuotaTargetSoapOut">
+    <wsdl:part name="parameters" element="tns:AdjustQuotaTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteQuotaRowsSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteQuotaRows" />
+  </wsdl:message>
+  <wsdl:message name="DeleteQuotaRowsSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteQuotaRowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SynchronizeQuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:SynchronizeQuota" />
+  </wsdl:message>
+  <wsdl:message name="SynchronizeQuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:SynchronizeQuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecalculateQuotaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecalculateQuota" />
+  </wsdl:message>
+  <wsdl:message name="RecalculateQuotaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecalculateQuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQuotaNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQuotaNames" />
+  </wsdl:message>
+  <wsdl:message name="GetQuotaNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQuotaNamesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="QuotaManagementSoap">
+    <wsdl:operation name="GetQuotaList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the quota list for a quota. The user can specify to get the quota list for either Production, Test, DesignWithProductionCounter, or DesignWithTestCounter by the quotaMode property. Note: The QuotaRowId on the QuotaRow object (which is contained by QuotaList) is only set if the quota is synchronized. If not available, it is set to -1.</wsdl:documentation>
+      <wsdl:input message="tns:GetQuotaListSoapIn" />
+      <wsdl:output message="tns:GetQuotaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuotaList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates the quota list in design mode.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateQuotaListSoapIn" />
+      <wsdl:output message="tns:UpdateQuotaListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjustQuotaTarget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adjusts the target for a quota row in design mode by a provided delta value. For example, the quota target can be decreased by 10 by providing -10 for deltaTarget. Note: This method can only be used if QuotaRowId was included from the GetQuotaList method. See note of method GetQuotaList.</wsdl:documentation>
+      <wsdl:input message="tns:AdjustQuotaTargetSoapIn" />
+      <wsdl:output message="tns:AdjustQuotaTargetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuotaRows">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes the rows in design mode that are  specified in the quotaList propery (the QuotaList has a property called QuotaRows).</wsdl:documentation>
+      <wsdl:input message="tns:DeleteQuotaRowsSoapIn" />
+      <wsdl:output message="tns:DeleteQuotaRowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeQuota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Synchronizes the quota from design to either test or production.</wsdl:documentation>
+      <wsdl:input message="tns:SynchronizeQuotaSoapIn" />
+      <wsdl:output message="tns:SynchronizeQuotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateQuota">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Goes through all the responses for a survey and recalculates the quota counts for a given quota.</wsdl:documentation>
+      <wsdl:input message="tns:RecalculateQuotaSoapIn" />
+      <wsdl:output message="tns:RecalculateQuotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the quota names for a project. The user can specify to get the names for either Production, Test, or design (DesignWithProductionCounter and DesignWithTestCounter will both give design name for this method) by the quotaMode property.</wsdl:documentation>
+      <wsdl:input message="tns:GetQuotaNamesSoapIn" />
+      <wsdl:output message="tns:GetQuotaNamesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="QuotaManagementSoap" type="tns:QuotaManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQuotaList">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetQuotaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuotaList">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateQuotaList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustQuotaTarget">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AdjustQuotaTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuotaRows">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteQuotaRows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeQuota">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SynchronizeQuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateQuota">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/RecalculateQuota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaNames">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetQuotaNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="QuotaManagementSoap12" type="tns:QuotaManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQuotaList">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetQuotaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuotaList">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/UpdateQuotaList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustQuotaTarget">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AdjustQuotaTarget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuotaRows">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteQuotaRows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeQuota">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SynchronizeQuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecalculateQuota">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/RecalculateQuota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaNames">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetQuotaNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QuotaManagement">
+    <wsdl:port name="QuotaManagementSoap" binding="tns:QuotaManagementSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/quotamanagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="QuotaManagementSoap12" binding="tns:QuotaManagementSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/quotamanagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:tns="http://firmglobal.com/Confirmit/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  targetNamespace="http://firmglobal.com/Confirmit/webservices/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://firmglobal.com/Confirmit/webservices/">
+      <s:element name="GetCreditBalanceFromPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="DatabaseType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Production" />
+          <s:enumeration value="Test" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCreditBalanceFromPanelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCreditBalanceFromPanelistResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromPanelResult" type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPanelistCredit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PanelistCredit" nillable="true"
+                     type="tns:PanelistCredit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PanelistCredit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFieldNames" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFieldValues" type="tns:ArrayOfString" />
+        </s:sequence>
+        <s:attribute name="CreditId" type="s:int" use="required" />
+        <s:attribute name="PanelistId" type="s:int" use="required" />
+        <s:attribute name="SecondaryPanelistId" type="s:int" use="required" />
+        <s:attribute name="PanelistTransactionId" type="s:int" use="required" />
+        <s:attribute name="SurveyId" type="s:string" />
+        <s:attribute name="SectionId" type="s:string" />
+        <s:attribute name="Credit" type="s:int" use="required" />
+        <s:attribute name="Comment" type="s:string" />
+        <s:attribute name="Created" type="s:dateTime" use="required" />
+        <s:attribute name="Pending" type="s:boolean" use="required" />
+        <s:attribute name="TransactionType" type="s:int" use="required" />
+        <s:attribute name="TransactionIsHidden" type="s:boolean" use="required" />
+        <s:attribute name="TransactionSourceType" type="s:int" use="required" />
+        <s:attribute name="TransactionModified" type="s:dateTime" use="required" />
+        <s:attribute name="TransactionModifiedBy" type="s:string" />
+        <s:attribute name="TransactionTaskId" type="s:int" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCreditsFromPanelBetween">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelBetweenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromPanelBetweenResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopNCreditsFromPanelResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromSurveyResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromSurveyBetween">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromSurveyBetweenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromSurveyBetweenResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopNCreditsFromSurveyResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromPanelistResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelistPerSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelistPerSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromPanelistPerSurveyResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelistBetween">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCreditsFromPanelistBetweenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCreditsFromPanelistBetweenResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopNCreditsFromPanelistResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanelistPerSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTopNCreditsFromPanelistPerSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTopNCreditsFromPanelistPerSurveyResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCredits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCreditsResult" type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditsWithCustomVariables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="topN" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="orderAscending" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="customFieldNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditsWithCustomVariablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCreditsWithCustomVariablesResult"
+                       type="tns:ArrayOfPanelistCredit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCreditToSecondaryPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="receivingPanelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="referrerPanelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sectionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="credit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCreditToSecondaryPanelistResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetCreditToPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sectionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="credit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCreditToPanelistResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddCreditToPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="credit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCreditToPanelistResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetCreditToPanelistWithCustomVariables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sectionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="credit" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldNames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldValues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCreditToPanelistWithCustomVariablesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAllCreditsFromSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllCreditsFromSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAllCreditsFromSurveyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCreditFromPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="creditId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCreditFromPanelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCreditFromPanelistResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllCreditsFromPanelist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllCreditsFromPanelistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAllCreditsFromPanelistResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllCreditsFromPanelistPerSurvey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="panelId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="panelistId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveyId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="databaseType" type="tns:DatabaseType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllCreditsFromPanelistPerSurveyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAllCreditsFromPanelistPerSurveyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCreditBalanceFromPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCreditBalanceFromPanelist" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditBalanceFromPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditBalanceFromPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanel" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelBetweenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelBetween" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelBetweenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanel" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromSurvey" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromSurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromSurveyBetweenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromSurveyBetween" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromSurveyBetweenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromSurveyBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromSurvey" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromSurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelist" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistPerSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelistPerSurvey" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistPerSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelistPerSurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistBetweenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelistBetween" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCreditsFromPanelistBetweenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCreditsFromPanelistBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanelist" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelistPerSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanelistPerSurvey" />
+  </wsdl:message>
+  <wsdl:message name="GetTopNCreditsFromPanelistPerSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTopNCreditsFromPanelistPerSurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCredits" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditsWithCustomVariablesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCreditsWithCustomVariables" />
+  </wsdl:message>
+  <wsdl:message name="GetCreditsWithCustomVariablesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditsWithCustomVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToSecondaryPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCreditToSecondaryPanelist" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToSecondaryPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCreditToSecondaryPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCreditToPanelist" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCreditToPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditToPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCreditToPanelist" />
+  </wsdl:message>
+  <wsdl:message name="AddCreditToPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCreditToPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToPanelistWithCustomVariablesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetCreditToPanelistWithCustomVariables" />
+  </wsdl:message>
+  <wsdl:message name="SetCreditToPanelistWithCustomVariablesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetCreditToPanelistWithCustomVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromSurvey" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromSurveyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCreditFromPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCreditFromPanelist" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCreditFromPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCreditFromPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromPanelistSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromPanelist" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromPanelistSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromPanelistResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromPanelistPerSurveySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromPanelistPerSurvey" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllCreditsFromPanelistPerSurveySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllCreditsFromPanelistPerSurveyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PanelCreditSoap">
+    <wsdl:operation name="GetCreditBalanceFromPanelist">
+      <wsdl:input message="tns:GetCreditBalanceFromPanelistSoapIn" />
+      <wsdl:output message="tns:GetCreditBalanceFromPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanel">
+      <wsdl:input message="tns:GetAllCreditsFromPanelSoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromPanelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelBetween">
+      <wsdl:input message="tns:GetAllCreditsFromPanelBetweenSoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromPanelBetweenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanel">
+      <wsdl:input message="tns:GetTopNCreditsFromPanelSoapIn" />
+      <wsdl:output message="tns:GetTopNCreditsFromPanelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurvey">
+      <wsdl:input message="tns:GetAllCreditsFromSurveySoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromSurveySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurveyBetween">
+      <wsdl:input message="tns:GetAllCreditsFromSurveyBetweenSoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromSurveyBetweenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromSurvey">
+      <wsdl:input message="tns:GetTopNCreditsFromSurveySoapIn" />
+      <wsdl:output message="tns:GetTopNCreditsFromSurveySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelist">
+      <wsdl:input message="tns:GetAllCreditsFromPanelistSoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistPerSurvey">
+      <wsdl:input message="tns:GetAllCreditsFromPanelistPerSurveySoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromPanelistPerSurveySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistBetween">
+      <wsdl:input message="tns:GetAllCreditsFromPanelistBetweenSoapIn" />
+      <wsdl:output message="tns:GetAllCreditsFromPanelistBetweenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelist">
+      <wsdl:input message="tns:GetTopNCreditsFromPanelistSoapIn" />
+      <wsdl:output message="tns:GetTopNCreditsFromPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelistPerSurvey">
+      <wsdl:input message="tns:GetTopNCreditsFromPanelistPerSurveySoapIn" />
+      <wsdl:output message="tns:GetTopNCreditsFromPanelistPerSurveySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCredits">
+      <wsdl:input message="tns:GetCreditsSoapIn" />
+      <wsdl:output message="tns:GetCreditsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditsWithCustomVariables">
+      <wsdl:input message="tns:GetCreditsWithCustomVariablesSoapIn" />
+      <wsdl:output message="tns:GetCreditsWithCustomVariablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToSecondaryPanelist">
+      <wsdl:input message="tns:SetCreditToSecondaryPanelistSoapIn" />
+      <wsdl:output message="tns:SetCreditToSecondaryPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelist">
+      <wsdl:input message="tns:SetCreditToPanelistSoapIn" />
+      <wsdl:output message="tns:SetCreditToPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditToPanelist">
+      <wsdl:input message="tns:AddCreditToPanelistSoapIn" />
+      <wsdl:output message="tns:AddCreditToPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelistWithCustomVariables">
+      <wsdl:input message="tns:SetCreditToPanelistWithCustomVariablesSoapIn" />
+      <wsdl:output message="tns:SetCreditToPanelistWithCustomVariablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromSurvey">
+      <wsdl:input message="tns:DeleteAllCreditsFromSurveySoapIn" />
+      <wsdl:output message="tns:DeleteAllCreditsFromSurveySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCreditFromPanelist">
+      <wsdl:input message="tns:DeleteCreditFromPanelistSoapIn" />
+      <wsdl:output message="tns:DeleteCreditFromPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelist">
+      <wsdl:input message="tns:DeleteAllCreditsFromPanelistSoapIn" />
+      <wsdl:output message="tns:DeleteAllCreditsFromPanelistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelistPerSurvey">
+      <wsdl:input message="tns:DeleteAllCreditsFromPanelistPerSurveySoapIn" />
+      <wsdl:output message="tns:DeleteAllCreditsFromPanelistPerSurveySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PanelCreditSoap" type="tns:PanelCreditSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCreditBalanceFromPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCreditBalanceFromPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanel">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelBetween">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelBetween"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanel">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromSurvey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurveyBetween">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromSurveyBetween"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromSurvey"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistPerSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelistPerSurvey"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistBetween">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelistBetween"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelistPerSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanelistPerSurvey"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredits">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditsWithCustomVariables">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCreditsWithCustomVariables"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToSecondaryPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToSecondaryPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToPanelist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditToPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddCreditToPanelist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelistWithCustomVariables">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToPanelistWithCustomVariables"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromSurvey"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCreditFromPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteCreditFromPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelist">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromPanelist"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelistPerSurvey">
+      <soap:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromPanelistPerSurvey"
+                      style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PanelCreditSoap12" type="tns:PanelCreditSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCreditBalanceFromPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCreditBalanceFromPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanel">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanel"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelBetween">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelBetween"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanel">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanel"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromSurveyBetween">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromSurveyBetween"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistPerSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelistPerSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCreditsFromPanelistBetween">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetAllCreditsFromPanelistBetween"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopNCreditsFromPanelistPerSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetTopNCreditsFromPanelistPerSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCredits">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCredits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditsWithCustomVariables">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/GetCreditsWithCustomVariables"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToSecondaryPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToSecondaryPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToPanelist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCreditToPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/AddCreditToPanelist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCreditToPanelistWithCustomVariables">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/SetCreditToPanelistWithCustomVariables"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCreditFromPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteCreditFromPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelist">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromPanelist"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllCreditsFromPanelistPerSurvey">
+      <soap12:operation soapAction="http://firmglobal.com/Confirmit/webservices/DeleteAllCreditsFromPanelistPerSurvey"
+                        style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PanelCredit">
+    <wsdl:port name="PanelCreditSoap" binding="tns:PanelCreditSoap">
+      <soap:address location="http://localhost/confirmit/webservices/current/panelcredit.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PanelCreditSoap12" binding="tns:PanelCreditSoap12">
+      <soap12:address location="http://localhost/confirmit/webservices/current/panelcredit.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

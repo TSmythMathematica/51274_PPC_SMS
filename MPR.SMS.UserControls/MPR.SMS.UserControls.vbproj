@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DFF75C8-35F9-44C1-9778-714A92CA6120}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>MPR.SMS.UserControls</RootNamespace>
+    <AssemblyName>MPR.SMS.UserControls</AssemblyName>
+    <MyType>Windows</MyType>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <OptionStrict>On</OptionStrict>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/MPR.SMS.UserControls/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>MPR.SMS.xml</DocumentationFile>
+    <NoWarn>42353,42354,42355</NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MPR.SMS.DocumentProcessing">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.DocumentProcessing.UserControls">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.DocumentProcessing.UserControls.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.SMS.Security">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.SMS.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="MPR.Windows.Forms">
+      <HintPath>..\MPR.SMS\Common Libraries\MPR.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Views\ViewConfirmitCallHist.Designer.vb">
+      <DependentUpon>ViewConfirmitCallHist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewConfirmitCallHist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewNotes.designer.vb">
+      <DependentUpon>ViewNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewNotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewAddressRemail.Designer.vb">
+      <DependentUpon>ViewAddressRemail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewAddressRemail.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseLocatingAttempts.Designer.vb">
+      <DependentUpon>ViewCaseLocatingAttempts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseLocatingAttempts.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseSocialNetworks.Designer.vb">
+      <DependentUpon>ViewCaseSocialNetworks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseSocialNetworks.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewDataSet.Designer.vb">
+      <DependentUpon>ViewDataSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewDataSet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\AddAddress.designer.vb">
+      <DependentUpon>AddAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\AddAddress.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingAttempt.Designer.vb">
+      <DependentUpon>EditLocatingAttempt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingAttempt.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingStatus.Designer.vb">
+      <DependentUpon>EditLocatingStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingStatus.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingStatusSupervisor.Designer.vb">
+      <DependentUpon>EditLocatingStatusSupervisor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditLocatingStatusSupervisor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditNote.Designer.vb">
+      <DependentUpon>EditNote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditNote.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditSocialNetwork.Designer.vb">
+      <DependentUpon>EditSocialNetwork.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditSocialNetwork.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Enumerations.vb" />
+    <Compile Include="Forms\frmDisplayNotes.Designer.vb">
+      <DependentUpon>frmDisplayNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDisplayNotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNote.Designer.vb">
+      <DependentUpon>frmNote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRemailDocument.Designer.vb">
+      <DependentUpon>frmRemailDocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRemailDocument.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddAddress.Designer.vb">
+      <DependentUpon>frmAddAddress.vb</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\frmAddAddress.vb">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Forms\frmLocatingStatusCode.Designer.vb">
+      <DependentUpon>frmLocatingStatusCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLocatingStatusCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDisplayDataView.Designer.vb">
+      <DependentUpon>frmDisplayDataView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDisplayDataView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmConsent.Designer.vb">
+      <DependentUpon>frmConsent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmConsent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMobilityClassroomTeacher.Designer.vb">
+      <DependentUpon>frmMobilityClassroomTeacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMobilityClassroomTeacher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddressEdit.Designer.vb">
+      <DependentUpon>frmAddressEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddressEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDisplayHistory.Designer.vb">
+      <DependentUpon>frmDisplayHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDisplayHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDisplayNote.Designer.vb">
+      <DependentUpon>frmDisplayNote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDisplayNote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDocumentAdd.Designer.vb">
+      <DependentUpon>frmDocumentAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDocumentAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEmail.Designer.vb">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMobilityStudent.Designer.vb">
+      <DependentUpon>frmMobilityStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMobilityStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPersonAdd.Designer.vb">
+      <DependentUpon>frmPersonAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPersonAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPersonEdit.Designer.vb">
+      <DependentUpon>frmPersonEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPersonEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPhone.Designer.vb">
+      <DependentUpon>frmPhone.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPhone.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRace.Designer.vb">
+      <DependentUpon>frmRace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRace.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectionForForwardingAddress.Designer.vb">
+      <DependentUpon>frmSelectionForForwardingAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectionForForwardingAddress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSocialNetwork.Designer.vb">
+      <DependentUpon>frmSocialNetwork.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSocialNetwork.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWebFavorites.Designer.vb">
+      <DependentUpon>frmWebFavorites.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmWebFavorites.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLocatingStatus.Designer.vb">
+      <DependentUpon>frmLocatingStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLocatingStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalUserControls.vb" />
+    <Compile Include="MPR ComboBoxes\ConsentTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\FMStatusComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\NoteTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\SocialNetworkStatusComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\SocialNetworkTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\ValidationStatusComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\LocatingAttemptTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\LocatingAttemptResultComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\MobilityComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseNotes.Designer.vb">
+      <DependentUpon>ViewCaseNotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseNotes.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditStudent.Designer.vb">
+      <DependentUpon>EditStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditStudent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\AddDocument.Designer.vb">
+      <DependentUpon>AddDocument.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\AddDocument.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditCaseRA.Designer.vb">
+      <DependentUpon>EditCaseRA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditCaseRA.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditClassroom.Designer.vb">
+      <DependentUpon>EditClassroom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditClassroom.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditSchool.Designer.vb">
+      <DependentUpon>EditSchool.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditSchool.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditDistrict.Designer.vb">
+      <DependentUpon>EditDistrict.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditDistrict.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditSite.Designer.vb">
+      <DependentUpon>EditSite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditSite.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditPersonName.Designer.vb">
+      <DependentUpon>EditPersonName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditPersonName.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditTeacher.Designer.vb">
+      <DependentUpon>EditTeacher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls %28Project-specific%29\EditTeacher.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseDocuments.Designer.vb">
+      <DependentUpon>ViewCaseDocuments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseDocuments.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseInstruments.Designer.vb">
+      <DependentUpon>ViewCaseInstruments.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseInstruments.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseEmails.Designer.vb">
+      <DependentUpon>ViewCaseEmails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseEmails.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCasePhones.Designer.vb">
+      <DependentUpon>ViewCasePhones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCasePhones.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseAddresses.Designer.vb">
+      <DependentUpon>ViewCaseAddresses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseAddresses.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseMembers.Designer.vb">
+      <DependentUpon>ViewCaseMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Data Views\ViewCaseMembers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditEmail.Designer.vb">
+      <DependentUpon>EditEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditEmail.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditPhone.Designer.vb">
+      <DependentUpon>EditPhone.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditPhone.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditAddress.Designer.vb">
+      <DependentUpon>EditAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditAddress.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity ComboBoxes\ClassroomComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity ComboBoxes\SiteComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity ComboBoxes\DistrictComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity ComboBoxes\TeacherComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity ComboBoxes\SchoolComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\AddressTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\AssignmentTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\DocumentTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\EmailTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\StateComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\RaceTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\RelationshipTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\ReturnedMailComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\SourceTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\EntityTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\LanguageTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\PhoneTimeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\PhoneTypeComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\SourceQualityComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPR ComboBoxes\StatusComboBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit Controls\EditPerson.Designer.vb">
+      <DependentUpon>EditPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit Controls\EditPerson.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\BatchSearchFunction.designer.vb">
+      <DependentUpon>BatchSearchFunction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\BatchSearchFunction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\CaseCriteria.Designer.vb">
+      <DependentUpon>CaseCriteria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\CaseCriteria.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\PersonCriteria.Designer.vb">
+      <DependentUpon>PersonCriteria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\PersonCriteria.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\SearchMPRIDFunction.designer.vb">
+      <DependentUpon>SearchMPRIDFunction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\SearchMPRIDFunction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\SearchFunction.designer.vb">
+      <DependentUpon>SearchFunction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\SearchFunction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Search Function\SearchSurveyResponse.Designer.vb">
+      <DependentUpon>SearchSurveyResponse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Search Function\SearchSurveyResponse.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\DateWithValidator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\GradeWithValidator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\PhoneWithValidator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\SSNWithValidator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\TextBoxWithContextMenu.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Validators\ZipCodeWithValidator.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data Views\ViewConfirmitCallHist.resx">
+      <DependentUpon>ViewConfirmitCallHist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewNotes.resx">
+      <DependentUpon>ViewNotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewAddressRemail.resx">
+      <DependentUpon>ViewAddressRemail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseLocatingAttempts.resx">
+      <DependentUpon>ViewCaseLocatingAttempts.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseSocialNetworks.resx">
+      <DependentUpon>ViewCaseSocialNetworks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewDataSet.resx">
+      <DependentUpon>ViewDataSet.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\AddAddress.resx">
+      <DependentUpon>AddAddress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditLocatingAttempt.resx">
+      <DependentUpon>EditLocatingAttempt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditLocatingStatus.resx">
+      <DependentUpon>EditLocatingStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditLocatingStatusSupervisor.resx">
+      <DependentUpon>EditLocatingStatusSupervisor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditNote.resx">
+      <DependentUpon>EditNote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditSocialNetwork.resx">
+      <DependentUpon>EditSocialNetwork.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDisplayNotes.resx">
+      <DependentUpon>frmDisplayNotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNote.resx">
+      <DependentUpon>frmNote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRemailDocument.resx">
+      <DependentUpon>frmRemailDocument.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddAddress.resx">
+      <DependentUpon>frmAddAddress.vb</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLocatingStatusCode.resx">
+      <DependentUpon>frmLocatingStatusCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDisplayDataView.resx">
+      <DependentUpon>frmDisplayDataView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmConsent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConsent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMobilityClassroomTeacher.resx">
+      <DependentUpon>frmMobilityClassroomTeacher.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddressEdit.resx">
+      <DependentUpon>frmAddressEdit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDisplayHistory.resx">
+      <DependentUpon>frmDisplayHistory.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDisplayNote.resx">
+      <DependentUpon>frmDisplayNote.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDocumentAdd.resx">
+      <DependentUpon>frmDocumentAdd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEmail.resx">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMobilityStudent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMobilityStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPersonAdd.resx">
+      <DependentUpon>frmPersonAdd.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPersonEdit.resx">
+      <DependentUpon>frmPersonEdit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPhone.resx">
+      <DependentUpon>frmPhone.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRace.resx">
+      <DependentUpon>frmRace.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectionForForwardingAddress.resx">
+      <DependentUpon>frmSelectionForForwardingAddress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSocialNetwork.resx">
+      <DependentUpon>frmSocialNetwork.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebFavorites.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWebFavorites.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLocatingStatus.resx">
+      <DependentUpon>frmLocatingStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\ConsentTypeComboBox.resx">
+      <DependentUpon>ConsentTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\NoteTypeComboBox.resx">
+      <DependentUpon>NoteTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\ValidationStatusComboBox.resx">
+      <DependentUpon>ValidationStatusComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\LocatingAttemptTypeComboBox.resx">
+      <DependentUpon>LocatingAttemptTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\LocatingAttemptResultComboBox.resx">
+      <DependentUpon>LocatingAttemptResultComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\MobilityComboBox.resx">
+      <DependentUpon>MobilityComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseNotes.resx">
+      <DependentUpon>ViewCaseNotes.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditStudent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\AddDocument.resx">
+      <DependentUpon>AddDocument.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditCaseRA.resx">
+      <DependentUpon>EditCaseRA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditClassroom.resx">
+      <DependentUpon>EditClassroom.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditSchool.resx">
+      <DependentUpon>EditSchool.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditDistrict.resx">
+      <DependentUpon>EditDistrict.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditSite.resx">
+      <DependentUpon>EditSite.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditPersonName.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditPersonName.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls %28Project-specific%29\EditTeacher.resx">
+      <DependentUpon>EditTeacher.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseDocuments.resx">
+      <DependentUpon>ViewCaseDocuments.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseInstruments.resx">
+      <DependentUpon>ViewCaseInstruments.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseEmails.resx">
+      <DependentUpon>ViewCaseEmails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCasePhones.resx">
+      <DependentUpon>ViewCasePhones.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseAddresses.resx">
+      <DependentUpon>ViewCaseAddresses.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data Views\ViewCaseMembers.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewCaseMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditEmail.resx">
+      <DependentUpon>EditEmail.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditPhone.resx">
+      <DependentUpon>EditPhone.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditAddress.resx">
+      <DependentUpon>EditAddress.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity ComboBoxes\ClassroomComboBox.resx">
+      <DependentUpon>ClassroomComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity ComboBoxes\SiteComboBox.resx">
+      <DependentUpon>SiteComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity ComboBoxes\DistrictComboBox.resx">
+      <DependentUpon>DistrictComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity ComboBoxes\TeacherComboBox.resx">
+      <DependentUpon>TeacherComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entity ComboBoxes\SchoolComboBox.resx">
+      <DependentUpon>SchoolComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\AddressTypeComboBox.resx">
+      <DependentUpon>AddressTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\AssignmentTypeComboBox.resx">
+      <DependentUpon>AssignmentTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\DocumentTypeComboBox.resx">
+      <DependentUpon>DocumentTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\EmailTypeComboBox.resx">
+      <DependentUpon>EmailTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\StateComboBox.resx">
+      <DependentUpon>StateComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\RaceTypeComboBox.resx">
+      <DependentUpon>RaceTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\RelationshipTypeComboBox.resx">
+      <DependentUpon>RelationshipTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\ReturnedMailComboBox.resx">
+      <DependentUpon>ReturnedMailComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\SourceTypeComboBox.resx">
+      <DependentUpon>SourceTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\EntityTypeComboBox.resx">
+      <DependentUpon>EntityTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\LanguageTypeComboBox.resx">
+      <DependentUpon>LanguageTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\PhoneTimeComboBox.resx">
+      <DependentUpon>PhoneTimeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\PhoneTypeComboBox.resx">
+      <DependentUpon>PhoneTypeComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\SourceQualityComboBox.resx">
+      <DependentUpon>SourceQualityComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPR ComboBoxes\StatusComboBox.resx">
+      <DependentUpon>StatusComboBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit Controls\EditPerson.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\BatchSearchFunction.resx">
+      <DependentUpon>BatchSearchFunction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\CaseCriteria.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CaseCriteria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\PersonCriteria.resx">
+      <DependentUpon>PersonCriteria.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\SearchMPRIDFunction.resx">
+      <DependentUpon>SearchMPRIDFunction.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\SearchFunction.resx">
+      <DependentUpon>SearchFunction.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Function\SearchSurveyResponse.resx">
+      <DependentUpon>SearchSurveyResponse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\DateWithValidator.resx">
+      <DependentUpon>DateWithValidator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\GradeWithValidator.resx">
+      <DependentUpon>GradeWithValidator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\PhoneWithValidator.resx">
+      <DependentUpon>PhoneWithValidator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\SSNWithValidator.resx">
+      <DependentUpon>SSNWithValidator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\TextBoxWithContextMenu.resx">
+      <DependentUpon>TextBoxWithContextMenu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validators\ZipCodeWithValidator.resx">
+      <DependentUpon>ZipCodeWithValidator.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MPR.SMS.DataQuality\MPR.SMS.DataQuality.vbproj">
+      <Project>{9eaeea05-7ae2-4889-ac2e-15b3aea8cf15}</Project>
+      <Name>MPR.SMS.DataQuality</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPR.SMS.Data\MPR.SMS.Data.vbproj">
+      <Project>{085C2B48-648E-4ED3-90FF-F005272E70D7}</Project>
+      <Name>MPR.SMS.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

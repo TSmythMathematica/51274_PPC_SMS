@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+* Copyright © Mathematica Policy Research, Inc. 
+* This code cannot be copied, distributed or used without the express written permission
+* of Mathematica Policy Research, Inc. 
+-->
+
+<xs:schema xmlns:tns="urn:mdWebServicePhoneCheck" elementFormDefault="qualified"
+           targetNamespace="urn:mdWebServicePhoneCheck" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RequestArray">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransmissionReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomerID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Record">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RecordID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Phone" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponseArray">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Version" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransmissionReference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Results" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TotalRecords" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Record">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RecordID" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Results" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="Phone">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" maxOccurs="1" name="AreaCode" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Prefix" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Suffix" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Extension" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="NewAreaCode" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Latitude" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Longitude" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="1" name="Country">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="Abbreviation" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="1" name="TimeZone">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
